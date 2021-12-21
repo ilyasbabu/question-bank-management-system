@@ -3,7 +3,9 @@ module.exports = {
     './layouts/*.html'
   ],
   theme: {
-    extend: {},
+    extend: {
+      
+    },
   },
   plugins: [],
 }
