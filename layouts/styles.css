@@ -515,6 +515,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   top: -6rem;
 }
 
+.-top-28 {
+  top: -7rem;
+}
+
 .z-10 {
   z-index: 10;
 }
