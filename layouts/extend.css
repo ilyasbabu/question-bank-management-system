@@ -1,0 +1,8 @@
+.marginsign{
+    margin-top: 18px;
+}
+@media (min-width: 1024px){
+    .marginsign{
+        margin-top: 0px;
+    }
+}

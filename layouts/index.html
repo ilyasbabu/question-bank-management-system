@@ -8,36 +8,84 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="extend.css"/>
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
 <body class="">
     <div class="m-0 p-0">
         
-    <div class="w-full border-b-2 shadow-lg">
+    <div class="w-full border-b-2 shadow-lg ">
         <nav class="flex items-center justify-between flex-wrap p-6 sm:mx-14 md:mx-6 mx-4 ">
             <div class="flex items-center flex-shrink-0 text-slate-700 mr-6">
-                <span class=" text-2xl font-bold tracking-tight">Question Bank</span>
+                <span class="text-4xl lg:text-2xl font-bold tracking-tight">Question Bank</span>
+
+                
+           
             </div>
-            <div class="block lg:hidden">
-            </div>
+
+
+
+
+
             <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
                 <div class="text-lg lg:flex-grow">
-                <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-slate-600 hover:text-black mr-4">
+                <a href="#responsive-header" class="hidden mt-4 lg:inline-block lg:mt-0 text-slate-600 hover:text-black mr-4">
                     Add question
                 </a>
-                <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-slate-600 hover:text-black mr-4">
+                <a href="#responsive-header" class="hidden mt-4 lg:inline-block lg:mt-0 text-slate-600 hover:text-black mr-4">
                     Feedback
                 </a>
-                <a href="#responsive-header" class="block mt-4 mb-2 lg:mb-0 lg:inline-block lg:mt-0 text-slate-600 hover:text-black">
+                <a href="#responsive-header" class="hidden mt-4 mb-2 lg:mb-0 lg:inline-block lg:mt-0 text-slate-600 hover:text-black">
                     About
                 </a>
                 </div>
-                <div class="lg:flex">
-
-                <a href="#" class=" mb-3 lg:mb-0 lg:px-5 py-2 leading-none rounded text-slate-600 text-lg hover:border-transparent hover:text-slate-700 hover:font-semibold  mt-4 lg:mt-0">Sign up!</a>
+                <div class="marginsign lg:flex">
+                <a href="#" class="hidden lg:inline mb-3 lg:mb-0 lg:px-5 py-2 leading-none rounded text-slate-600 text-lg hover:border-transparent hover:text-slate-700 hover:font-semibold  mt-4 lg:mt-0">Sign up!</a>
                 <div class="mt-3 lg:mt-0">
                     <input type="text" class="border-2 rounded-md h-8 " placeholder="  search">
                     <input type="submit" class="border bg-slate-600 text-white w-20 h-8 lg:mr-2  rounded font-semibold" value="Search">
+
+
+
+
+
+
+
+
+
                         </div>
+
+
+
+
+                        <div class="flex justify-end h-screen fixed right-8 -bottom-10 -top-24 lg:hidden">
+                            <div x-data="{ dropdownOpen: false }" class="relative my-32">
+                              <button @click="dropdownOpen = !dropdownOpen" class="relative z-10 block rounded-md bg-white p-2 focus:outline-none">
+                                <svg class="h-10 w-10 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                              </button>
+                            
+                              <div x-show="dropdownOpen" @click="dropdownOpen = false" class="fixed inset-0 h-full w-full z-10"></div>
+                            
+                              <div x-show="dropdownOpen" class="absolute right-0 mt-2 py-2 w-48 bg-white rounded-md shadow-xl z-20">
+                                <a href="#" class="block px-4 py-2 text-lg hover:font-semibold capitalize text-gray-700 hover:bg-slate-500 hover:text-white">
+                                  Add Question
+                                </a>
+                                <a href="#" class="block px-4 py-2 text-lg hover:font-semibold capitalize text-gray-700 hover:bg-slate-500 hover:text-white">
+                                  Feedback
+                                </a>
+                                <a href="#" class="block px-4 py-2 text-lg hover:font-semibold capitalize text-gray-700 hover:bg-slate-500 hover:text-white">
+                                  About
+                                </a>
+                                <a href="#" class="block px-4 py-2 text-lg hover:font-semibold capitalize text-gray-700 hover:bg-slate-500 hover:text-white">
+                                  Sign up
+                                </a>
+                              </div>
+                            </div>
+                            </div>
+
+
+
                 </div>
             </div>
             </nav>
@@ -61,6 +109,14 @@
             <div>
 
             </div>
+
+
+
+          
+
+
+
+            
         </main>
 
 
