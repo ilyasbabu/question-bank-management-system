@@ -12,20 +12,12 @@
 </head>
 <body class="">
     <div class="m-0 p-0">
-        
+        <!-- nav start -->
     <div class="w-full border-b-2 shadow-lg ">
         <nav class="flex items-center justify-between flex-wrap p-6 sm:mx-14 md:mx-6 mx-4 ">
             <div class="flex items-center flex-shrink-0 text-slate-700 mr-6">
                 <span class="text-4xl lg:text-2xl font-bold tracking-tight">Question Bank</span>
-
-                
-           
             </div>
-
-
-
-
-
             <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
                 <div class="text-lg lg:flex-grow">
                 <a href="#responsive-header" class="hidden mt-4 lg:inline-block lg:mt-0 text-slate-600 hover:text-black mr-4">
@@ -43,80 +35,55 @@
                 <div class="mt-3 lg:mt-0">
                     <input type="text" class="border-2 rounded-md h-8 " placeholder="  search">
                     <input type="submit" class="border bg-slate-600 text-white w-20 h-8 lg:mr-2  rounded font-semibold" value="Search">
-
-
-
-
-
-
-
-
-
                         </div>
-
-
-
-
                         <div class="flex justify-end h-screen fixed right-8 -bottom-10 -top-28 lg:hidden">
                             <div x-data="{ dropdownOpen: false }" class="relative my-32">
-                              <button @click="dropdownOpen = !dropdownOpen" class="relative z-10 block rounded-md bg-white p-2 focus:outline-none">
+                                <button @click="dropdownOpen = !dropdownOpen" class="relative z-10 block rounded-md bg-white p-2 focus:outline-none">
                                 <svg class="h-10 w-10 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                                 </svg>
-                              </button>
-                            
-                              <div x-show="dropdownOpen" @click="dropdownOpen = false" class="fixed inset-0 h-full w-full z-10"></div>
-                            
-                              <div x-show="dropdownOpen" class="absolute right-0 mt-2 py-2 w-48 bg-white rounded-md shadow-xl z-20">
+                                </button>
+                                <div x-show="dropdownOpen" @click="dropdownOpen = false" class="fixed inset-0 h-full w-full z-10"></div>
+                                <div x-show="dropdownOpen" class="absolute right-0 mt-2 py-2 w-48 bg-white rounded-md shadow-xl z-20">
                                 <a href="#" class="block px-4 py-2 text-lg hover:font-semibold capitalize text-gray-700 hover:bg-slate-500 hover:text-white">
-                                  Add Question
+                                    Add Question
                                 </a>
                                 <a href="#" class="block px-4 py-2 text-lg hover:font-semibold capitalize text-gray-700 hover:bg-slate-500 hover:text-white">
-                                  Feedback
+                                    Feedback
                                 </a>
                                 <a href="#" class="block px-4 py-2 text-lg hover:font-semibold capitalize text-gray-700 hover:bg-slate-500 hover:text-white">
-                                  About
+                                    About
                                 </a>
                                 <a href="#" class="block px-4 py-2 text-lg hover:font-semibold capitalize text-gray-700 hover:bg-slate-500 hover:text-white">
-                                  Sign up
+                                    Sign up
                                 </a>
-                              </div>
+                                </div>
                             </div>
                             </div>
-
-
-
                 </div>
             </div>
             </nav>
-        </div>
-
-
-
-
+        </div>    
+        <!-- nav end -->
         <main>
-            <div>
-                <div class="flex py-16 px-32 justify-between">
-                    <h1 class="text-2xl font-semibold">
+            <div class="md:px-28 md:py-14 px-10 py-6 flex justify-between">
+                <div>
+                    <div><h1 class="text-2xl text-slate-700">
                         Find Questions
-                    </h1>
-                    <div class="flex pr-6">
-                        <a href=""><img class="w-7 h-7 m-1 mt-2" src="media/q.png" alt=""></a>
-                        <a href=""><img class="w-7 h-7 m-1" src="media/qa.png" alt=""></a>
-                    </div>
+                    </h1></div>
+                </div>
+                <div class="flex pt-3">
+                    <div class="mr-2"><a href=""><img class="w-5 lg:w-8" src="media/1.png" alt=""></a></div>
+                    <div class="mr-2"><a href=""><img class="w-5 lg:w-8" src="media/2.png" alt=""></a></div>
                 </div>
             </div>
+
+
+
+            <!-- questions -->
             <div>
 
             </div>
-
-
-
-          
-
-
-
-            
         </main>
 
 
