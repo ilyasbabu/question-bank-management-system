@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>signup</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="extend.css" />
     <script src="script.js"></script>
@@ -84,14 +84,26 @@
     </div>
 
 
-    <div class="flex justify-center ">
-        <div class="shadow-2xl h-screen lg:w-1/2 w-full drop-shadow-xl flex justify-center items-center">
+    <div class="flex justify-center py-7 my-2 pt-16">
+        <div class="lg:shadow-2xl h-screen lg:w-1/2 w-5/6 drop-shadow-xl flex justify-center items-center">
             <div>
 
                 <form>
-                    <div>
-                        <span class="text-sm text-slate-700">Welcome back</span>
-                        <h1 class="text-2xl text-slate-600 font-bold">Login to your account</h1>
+                    <div class="">
+                        <span class="text-sm text-slate-700 ">Hello!</span>
+                        <h1 class="text-2xl text-slate-600 font-bold">Create your account</h1>
+                    </div>
+                    <div class="flex ">
+                        <div class="my-3">
+                            <label class="block text-md mb-2 text-slate-700" for="email">First name</label>
+                            <input class="px-4 w-full border-2 py-2 rounded-md text-sm outline-none" type="email"
+                                name="password" placeholder="First">
+                        </div>
+                        <div class="my-3">
+                            <label class="block text-md mb-2 text-slate-700" for="email">Last name</label>
+                            <input class="px-4 w-full border-2 py-2 rounded-md text-sm outline-none" type="email"
+                                name="password" placeholder="Last">
+                        </div>
                     </div>
                     <div class="my-3">
                         <label class="block text-md mb-2 text-slate-700" for="email">Email</label>
@@ -103,23 +115,22 @@
                         <input class="px-4 w-full border-2 py-2 rounded-md text-sm outline-none" type="password"
                             name="password" placeholder="**********">
                     </div>
-
-                    <div class="flex justify-between">
-                        <div>
-                            <input class="cursor-pointer" type="radio" name="rememberme">
-                            <span class="text-sm text-slate-700">Remember Me</span>
-                        </div>
-                        <span class="text-sm text-blue-700 hover:underline cursor-pointer">Forgot password?</span>
+                    <div class="mt-5 mb-4">
+                        <label class="block text-md mb-2 text-slate-700" for="password">Confirm Password</label>
+                        <input class="px-4 w-full border-2 py-2 rounded-md text-sm outline-none" type="password"
+                            name="password" placeholder="**********">
                     </div>
+
+
                     <div class="">
                         <button
-                            class="mt-4 mb-3 w-full bg-slate-500 hover:bg-green-400 text-white py-2 rounded-md transition duration-100">Login
-                            now</button>
+                            class="mt-4 mb-3 w-full bg-slate-500 hover:bg-green-400 text-white py-2 rounded-md transition duration-100">Sign
+                            up</button>
 
                     </div>
                 </form>
-                <p class="mt-4 text-slate-700"> Dont have an account? <span
-                        class="cursor-pointer text-sm text-blue-600"> <a href="signup.html"> Create account!</a></span></p>
+                <p class="mt-4 text-slate-700"> Already have an account? <span
+                        class="cursor-pointer text-sm text-blue-600"> <a href="login.html"> Login!</a></span></p>
             </div>
         </div>
     </div>
