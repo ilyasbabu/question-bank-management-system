@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "16.x"
+  },
   "dependencies": {
     "@tailwindcss/forms": "^0.4.0",
     "acorn": "^7.4.1",
@@ -65,7 +68,6 @@
     "minimatch": "^3.0.4",
     "minimist": "^1.2.5",
     "nanoid": "^3.1.30",
-    "node": "^16.13.1",
     "node-releases": "^2.0.1",
     "normalize-path": "^3.0.0",
     "normalize-range": "^0.1.2",
