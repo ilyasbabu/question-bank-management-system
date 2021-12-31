@@ -1,13 +1,4 @@
 module.exports = {
-  purge: {
-    content: ['./src/**/*.html'],
-    safelist: [
-      'bg-slate-700',
-      'shadow-lg',
-      'p-4',
-      'text-white',
-    ]
-  },
   content: [
     './layouts/*.html'
   ],
