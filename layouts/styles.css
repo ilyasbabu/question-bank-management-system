@@ -599,6 +599,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin: 0px;
 }
 
+.m-5 {
+  margin: 1.25rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -737,6 +741,42 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .ml-28 {
   margin-left: 7rem;
+}
+
+.ml-8 {
+  margin-left: 2rem;
+}
+
+.ml-10 {
+  margin-left: 2.5rem;
+}
+
+.ml-7 {
+  margin-left: 1.75rem;
+}
+
+.ml-6 {
+  margin-left: 1.5rem;
+}
+
+.ml-24 {
+  margin-left: 6rem;
+}
+
+.ml-16 {
+  margin-left: 4rem;
+}
+
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
+.mt-32 {
+  margin-top: 8rem;
+}
+
+.mt-28 {
+  margin-top: 7rem;
 }
 
 .block {
@@ -1645,6 +1685,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .lg\:mr-2 {
     margin-right: 0.5rem;
+  }
+
+  .lg\:mt-1 {
+    margin-top: 0.25rem;
+  }
+
+  .lg\:mr-3 {
+    margin-right: 0.75rem;
+  }
+
+  .lg\:mr-1 {
+    margin-right: 0.25rem;
   }
 
   .lg\:inline-block {
