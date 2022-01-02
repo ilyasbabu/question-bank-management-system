@@ -5,430 +5,571 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Question Bank</title>
+    <title>About us</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="extend.css" />
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
 </head>
-
 <body>
-
-<!-- component -->
-<!-- Create By Joker Banny -->
-<div class="min-h-screen bg-no-repeat bg-cover bg-center"
-	style="background-image: url('media/user.png')">
-	<div class="flex justify-end">
-		<div class="bg-white min-h-screen w-full lg:w-1/2 flex">
-            <div>
-                <div>
-                    <h3 class="text-2xl text-slate-800 font-semibold mt-3 absolute -top-5 pt-10 ml-4 underline"> Our Team</h3>
+    <div class="w-full border-b-2 shadow-lg fixed bg-white z-30">
+        <nav class="flex items-center justify-between flex-wrap p-6 sm:mx-14 md:mx-6 mx-4 ">
+            <div class="flex items-center flex-shrink-0 text-slate-700 mr-6">
+                <span class="text-4xl lg:text-2xl font-bold tracking-tight"><a href="index.html">Question
+                        Bank</a></span>
+            </div>
+            <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+                <div class="text-lg lg:flex-grow">
+                    <a href="addquestion.html"
+                        class="hidden mt-4 lg:inline-block lg:mt-0 text-slate-600 hover:text-black mr-4">
+                        Add question
+                    </a>
+                    <a href="feedback.html"
+                        class="hidden mt-4 lg:inline-block lg:mt-0 text-slate-600 hover:text-black mr-4">
+                        Feedback
+                    </a>
+                    <a href="about.html"
+                        class="hidden mt-4 mb-2 lg:mb-0 lg:inline-block lg:mt-0 text-slate-600 hover:text-black">
+                        About
+                    </a>
+                </div>
+                <div class="marginsign lg:flex ">
+                    <a href="login.html"
+                        class="hidden lg:inline mb-3 lg:mb-0 lg:px-5 py-2 leading-none rounded text-slate-600 text-lg hover:border-transparent hover:text-slate-700 hover:font-semibold  mt-4 lg:mt-0">Sign
+                        up/login</a>
+                    <div class="mt-3 lg:mt-0">
+                        <input type="text" class="border-2 rounded-md h-8 " placeholder="  search">
+                        <input type="submit"
+                            class="border bg-slate-600 text-white w-20 h-8 lg:mr-2  rounded font-semibold"
+                            value="Search">
+                    </div>
+                    <div class="flex justify-end h-screen absolute right-8 -bottom-10 -top-28 lg:hidden">
+                        <div x-data="{ dropdownOpen: false }" class="relative my-32">
+                            <button @click="dropdownOpen = !dropdownOpen"
+                                class="relative z-10 block rounded-md bg-white p-2 focus:outline-none">
+                                <svg class="h-10 w-10 text-gray-800" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                            <div x-show="dropdownOpen" @click="dropdownOpen = false"
+                                class="fixed inset-0 h-full w-full z-10"></div>
+                            <div x-show="dropdownOpen"
+                                class="absolute right-0 mt-2 py-2 w-48 bg-white rounded-md shadow-xl z-20">
+                                <a href="addquestion.html"
+                                    class="block px-4 py-2 text-lg hover:font-semibold capitalize text-gray-700 hover:bg-slate-500 hover:text-white">
+                                    Add Question
+                                </a>
+                                <a href="feedback.html"
+                                    class="block px-4 py-2 text-lg hover:font-semibold capitalize text-gray-700 hover:bg-slate-500 hover:text-white">
+                                    Feedback
+                                </a>
+                                <a href="about.html"
+                                    class="block px-4 py-2 text-lg hover:font-semibold capitalize text-gray-700 hover:bg-slate-500 hover:text-white">
+                                    About
+                                </a>
+                                <a href="login.html"
+                                    class="block px-4 py-2 text-lg hover:font-semibold capitalize text-gray-700 hover:bg-slate-500 hover:text-white">
+                                    Sign up/Login
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-			<div>
-                
-                <div class="lg:flex">               <!-- component -->
-                    <div class="ml-5 pt-20">
-                      <div class="shadow-lg group container  rounded-md bg-white  max-w-xs flex  mx-auto contentilyas-div">
-                          <div>
-                          <div  class="w-full image-cover rounded-t-md" >
-                            
-                          </div>
-                          <div class="py-8 px-4 bg-white  rounded-b-md fd-cl group-hover:opacity-25">
-                            <span class="block text-lg text-gray-800 font-bold tracking-wide">Ilyas Babu</span>
-                            <span  class="block text-gray-600 text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, maxime!
-                            </span>
-                        </div>
-                        </div>
-                        <div class="absolute opacity-0 fd-sh group-hover:opacity-100">
-                          <div class="mt-32 ml-5">
-                                 <h3 class="text-white font-bold mb-2 lg:mb-4"> Connect us</h3>
-                                 <div class=" flex lg:items-center lg:justify-center">
-                                     <div class="lg:container lg:max-w-screen-lg lg:mx-auto">
-                                         <div>
-                                             <div class="lg:flex lg:flex-wrap lg:justify-center gap-2">
-                                                 <a href="">
-                                                     <button
-                                                         class="bg-blue-500 hover:bg-white p-2 font-semibold text-white hover:text-black inline-flex items-center space-x-2 rounded">
-                                                         <svg class="w-5 h-5 fill-current" role="img"
-                                                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                                             <path
-                                                                 d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                                                         </svg>
-                                                     </button>
-                                                 </a>
-                                                 <a href="https://github.com/ilyasbabu/questio-bank-django">
-                                                     <button
-                                                         class="bg-gray-700 hover:bg-white hover:text-black  p-2 font-semibold text-white inline-flex items-center space-x-2 rounded">
-                                                         <svg xmlns="http://www.w3.org/2000/svg"
-                                                             xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
-                                                             role="img" class="w-5" preserveAspectRatio="xMidYMid meet"
-                                                             viewBox="0 0 24 24">
-                                                             <g fill="none">
-                                                                 <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                     d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385c.6.105.825-.255.825-.57c0-.285-.015-1.23-.015-2.235c-3.015.555-3.795-.735-4.035-1.41c-.135-.345-.72-1.41-1.23-1.695c-.42-.225-1.02-.78-.015-.795c.945-.015 1.62.87 1.845 1.23c1.08 1.815 2.805 1.305 3.495.99c.105-.78.42-1.305.765-1.605c-2.67-.3-5.46-1.335-5.46-5.925c0-1.305.465-2.385 1.23-3.225c-.12-.3-.54-1.53.12-3.18c0 0 1.005-.315 3.3 1.23c.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23c.66 1.65.24 2.88.12 3.18c.765.84 1.23 1.905 1.23 3.225c0 4.605-2.805 5.625-5.475 5.925c.435.375.81 1.095.81 2.22c0 1.605-.015 2.895-.015 3.3c0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"
-                                                                     fill="currentColor" />
-                                                             </g>
-                                                         </svg>
-                                                     </button>
-                                                 </a>
-                                                 <a href="">
-                                                     <button
-                                                         class="bg-blue-400 p-2 hover:bg-white hover:text-black font-semibold  text-white inline-flex items-center space-x-2 rounded">
-                                                         <svg class="w-5 h-5 fill-current" role="img"
-                                                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                                             <path
-                                                                 d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
-                                                         </svg>
-                                                     </button>
-                                                 </a>
-                                                 <a href="">
-                                                     <button
-                                                         class="bg-red-500 p-2 hover:bg-white hover:text-black font-semibold text-white inline-flex items-center space-x-2 rounded">
-                                                         <svg class="w-5 h-5 fill-current" role="img" viewBox="0 0 24 24"
-                                                             xmlns="http://www.w3.org/2000/svg">
-                                                             <path
-                                                                 d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z" />
-                                                         </svg>
-                                                     </button>
-                                                 </a>
-                                                 
-                                             </div>
-                                         </div>
-                                     </div>
-                                 </div>
-                             </div>
-                    </div>
-                    </div>
-                   
+        </nav>
+    </div>
+    <!-- nav end -->
+    <main>
+        <!-- about  -->
+        <div class="w-auto  pt-56 pl-9 lg:pl-0 lg:pt-36 min-h-screen">
+            <div>
+                <h1 class="text-3xl font-semibold text-slate-600 lg:text-center">A few words about us</h1>
+            </div>
+            <div class="flex justify-center pt-5 lg:pt-10">
+                <div class="lg:mt-5 lg:mr-10 lg:w-1/3">
+                    <p class="lg:pt-16 lg:text-xl text-lg lg:text-right">We value diversity and belive that different
+                        backgrouds, ideas
+                        and perspectives are what makes us
+                        stronger and more capable as a team. Each and every one of us adds to our mission. <br><br><span
+                            class="font-medium"> We
+                            blend
+                            our strengths togehter, combining our experience and creative minds to bring the best
+                            ideas.</span></p>
                 </div>
-                  <div class="ml-5 pt-20">
-                      <div class="shadow-lg group container  rounded-md bg-white  max-w-xs flex  mx-auto contentmufeed-div">
-                          <div>
-                          <div  class="w-full image-cover rounded-t-md" >
-                            
-                          </div>
-                          <div class="py-8 px-4 bg-white  rounded-b-md fd-cl group-hover:opacity-25">
-                            <span class="block text-lg text-gray-800 font-bold tracking-wide">Mufeed kka</span>
-                            <span  class="block text-gray-600 text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, maxime!
-                            </span>
-                        </div>
+                <div class="w-1/3 pt-4 ml-12">
+                    <img src="media/aboutbg1.jpg" class="w-96 hidden lg:block" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- team  -->
+        <div class="w-auto pt-10 lg:pl-0 lg:pt-10 min-h-screen border-t-2">
+            <div>
+                <h1 class="text-3xl pl-9 font-semibold text-slate-600 lg:text-center">Meet the Team</h1>
+            </div>
+            <div class="lg:flex lg:justify-center">
+                <!-- person 1 -->
+                <div class="lg:ml-5 pt-20">
+                    <div
+                        class="shadow-lg group container  rounded-md bg-white  max-w-xs flex  mx-auto contentilyas-div">
+                        <div>
+                            <div class="w-full image-cover rounded-t-md">
+                            </div>
+                            <div class="py-8 px-4 bg-white  rounded-b-md fd-cl group-hover:opacity-25">
+                                <span class="block text-lg text-gray-800 font-bold tracking-wide">Ilyas
+                                    Babu</span>
+                                <span class="block text-gray-600 text-sm">Lorem, ipsum dolor sit amet
+                                    consectetur adipisicing elit. Laborum, maxime!
+                                </span>
+                            </div>
                         </div>
                         <div class="absolute opacity-0 fd-sh group-hover:opacity-100">
-                       
-                       <div class=" mb-4 lg:mr-32 lg:mt-3">
-                        
-                        <div class="mt-32 ml-5">
-                            <h3 class="text-white font-bold mb-2 lg:mb-4"> Connect us</h3>
-                            <div class=" flex lg:items-center lg:justify-center">
-                                <div class="lg:container lg:max-w-screen-lg lg:mx-auto">
-                                    <div>
-                                        <div class="lg:flex lg:flex-wrap lg:justify-center gap-2">
-                                            <a href="">
-                                                <button
-                                                    class="bg-blue-500 hover:bg-white p-2 font-semibold text-white hover:text-black inline-flex items-center space-x-2 rounded">
-                                                    <svg class="w-5 h-5 fill-current" role="img"
-                                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                                        <path
-                                                            d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                                                    </svg>
-                                                </button>
-                                            </a>
-                                            <a href="https://github.com/ilyasbabu/questio-bank-django">
-                                                <button
-                                                    class="bg-gray-700 hover:bg-white hover:text-black  p-2 font-semibold text-white inline-flex items-center space-x-2 rounded">
-                                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                                        xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
-                                                        role="img" class="w-5" preserveAspectRatio="xMidYMid meet"
-                                                        viewBox="0 0 24 24">
-                                                        <g fill="none">
-                                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385c.6.105.825-.255.825-.57c0-.285-.015-1.23-.015-2.235c-3.015.555-3.795-.735-4.035-1.41c-.135-.345-.72-1.41-1.23-1.695c-.42-.225-1.02-.78-.015-.795c.945-.015 1.62.87 1.845 1.23c1.08 1.815 2.805 1.305 3.495.99c.105-.78.42-1.305.765-1.605c-2.67-.3-5.46-1.335-5.46-5.925c0-1.305.465-2.385 1.23-3.225c-.12-.3-.54-1.53.12-3.18c0 0 1.005-.315 3.3 1.23c.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23c.66 1.65.24 2.88.12 3.18c.765.84 1.23 1.905 1.23 3.225c0 4.605-2.805 5.625-5.475 5.925c.435.375.81 1.095.81 2.22c0 1.605-.015 2.895-.015 3.3c0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"
-                                                                fill="currentColor" />
-                                                        </g>
-                                                    </svg>
-                                                </button>
-                                            </a>
-                                            <a href="">
-                                                <button
-                                                    class="bg-blue-400 p-2 hover:bg-white hover:text-black font-semibold  text-white inline-flex items-center space-x-2 rounded">
-                                                    <svg class="w-5 h-5 fill-current" role="img"
-                                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                                        <path
-                                                            d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
-                                                    </svg>
-                                                </button>
-                                            </a>
-                                            <a href="">
-                                                <button
-                                                    class="bg-red-500 p-2 hover:bg-white hover:text-black font-semibold text-white inline-flex items-center space-x-2 rounded">
-                                                    <svg class="w-5 h-5 fill-current" role="img" viewBox="0 0 24 24"
-                                                        xmlns="http://www.w3.org/2000/svg">
-                                                        <path
-                                                            d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z" />
-                                                    </svg>
-                                                </button>
-                                            </a>
-                                            
+                            <div class="mt-32 ml-5">
+                                <h3 class="text-white font-bold mb-2 lg:mb-4"> Connect </h3>
+                                <div class=" flex lg:items-center lg:justify-center">
+                                    <div class="lg:container lg:max-w-screen-lg lg:mx-auto">
+                                        <div>
+                                            <div class="">
+                                                <div class="grid grid-cols-4 gap-4">
+                                                    <!--Github Button -->
+                                                    <a href="">
+                                                        <button id="github"
+                                                            class="bg-white  sticky duration-500 border-2 border-black   w-12 transform hover:-translate-y-3   h-12 text-2xl rounded-full hover:bg-black hover:text-white text-black ">
+                                                            <i class="fab fa-github"></i>
+                                                        </button></a>
+                                                    <!--İnstagram Button -->
+                                                    <a href="">
+                                                        <button id="instagram"
+                                                            class=" border-2 hover:border-0 border-pink-500 bg-gradient-to-b text-2xl hover:from-indigo-600 hover:via-pink-600 hover:to-yellow-500 min-w-wull hover:text-white bg-white text-pink-600 w-12 h-12  transform hover:-translate-y-3 rounded-full duration-500 ">
+                                                            <i class="fab fa-instagram"></i>
+                                                        </button>
+                                                    </a>
+                                                    <!--Whatsapp Button -->
+                                                    <a href="">
+                                                        <button id="whatsapp"
+                                                            class="bg-white duration-500    w-12 h-12 border-2 rounded-full border-green-600 transform hover:-translate-y-3  text-2xl text-green-500 hover:bg-green-600 hover:text-white">
+                                                            <i class="fab fa-whatsapp"></i>
+                                                        </button>
+                                                    </a>
+                                                    <!--Twitter Button -->
+                                                    <a href="">
+                                                        <button id="twitter"
+                                                            class="bg-white  transform hover:-translate-y-3  border-2 w-12 h-12 rounded-full duration-500 text-blue-400 border-blue-400 hover:bg-blue-400 hover:text-white text-2xl">
+                                                            <i class="fab fa-twitter"></i>
+                                                        </button>
+                                                    </a>
+                                                    <!--Linkedin Button-->
+                                                    <a href="">
+                                                        <button id="linkedin"
+                                                            class="bg-white transform hover:-translate-y-3  border-2 w-12 h-12 rounded-full duration-500 text-blue-500 border-blue-500  hover:bg-blue-500 hover:text-white text-2xl">
+                                                            <i class="fab fa-linkedin-in"></i>
+                                                        </button>
+                                                    </a>
+                                                    <!--Twitter Button -->
+                                                    <a href="">
+                                                        <button id="telegram"
+                                                            class="bg-white  transform hover:-translate-y-3  border-2 w-12 h-12 rounded-full duration-500 text-blue-400 border-blue-400 hover:bg-blue-400 hover:text-white text-2xl">
+                                                            <i class="fab fa-telegram-plane"></i>
+                                                        </button>
+                                                    </a>
+                                                    <!--Discord Button -->
+                                                    <a href="">
+                                                        <button id="discord"
+                                                            class="bg-white transform hover:-translate-y-3  border-2 w-12 h-12 rounded-full duration-500 text-indigo-500 border-indigo-500 hover:bg-indigo-500 hover:text-white text-2xl">
+                                                            <i class="fab fa-discord"></i>
+                                                        </button>
+                                                    </a>
+                                                    <!--Reddit Button -->
+                                                    <a href="">
+                                                        <button id="reddit"
+                                                            class="bg-white transform hover:-translate-y-3  border-2 w-12 h-12 rounded-full duration-500 text-yellow-600 border-yellow-600 hover:bg-yellow-600 hover:text-white text-2xl">
+                                                            <i class="fab fa-reddit-alien"></i>
+                                                        </button>
+                                                    </a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                       
+                </div>
+                <!-- person 2 -->
+                <div class="lg:ml-5 pt-20">
+                    <div
+                        class="shadow-lg group container  rounded-md bg-white  max-w-xs flex  mx-auto contentmufeed-div">
+                        <div>
+                            <div class="w-full image-cover rounded-t-md">
+                            </div>
+                            <div class="py-8 px-4 bg-white  rounded-b-md fd-cl group-hover:opacity-25">
+                                <span class="block text-lg text-gray-800 font-bold tracking-wide">Mufeed
+                                    kka</span>
+                                <span class="block text-gray-600 text-sm">Lorem, ipsum dolor sit amet
+                                    consectetur adipisicing elit. Laborum, maxime!
+                                </span>
+                            </div>
+                        </div>
+                        <div class="absolute opacity-0 fd-sh group-hover:opacity-100">
+                            <div class=" mb-4 lg:mr-32 lg:mt-3">
+                                <div class="mt-32 ml-5">
+                                    <h3 class="text-white font-bold mb-2 lg:mb-4"> Connect us</h3>
+                                    <div class=" flex lg:items-center lg:justify-center">
+                                        <div class="lg:container lg:max-w-screen-lg lg:mx-auto">
+                                            <div>
+                                                <div class="">
+                                                    <div class="grid grid-cols-4 gap-4">
+                                                        <!--Facebook Button -->
+                                                        <a href="">
+                                                            <button id="facebook"
+                                                                class="bg-white  sticky duration-500 border-2 border-blue-600 fixed  w-12 transform hover:-translate-y-3   h-12 text-2xl rounded-full hover:bg-blue-600 hover:text-white text-blue-600 ">
+                                                                <i class="fab fa-facebook-f"></i>
+                                                            </button></a>
+                                                        <!--İnstagram Button -->
+                                                        <a href="">
+                                                            <button id="instagram"
+                                                                class=" border-2 hover:border-0 border-pink-500 bg-gradient-to-b text-2xl hover:from-indigo-600 hover:via-pink-600 hover:to-yellow-500 min-w-wull hover:text-white bg-white text-pink-600 w-12 h-12  transform hover:-translate-y-3 rounded-full duration-500 ">
+                                                                <i class="fab fa-instagram"></i>
+                                                            </button>
+                                                        </a>
+                                                        <!--Whatsapp Button -->
+                                                        <a href="">
+                                                            <button id="whatsapp"
+                                                                class="bg-white duration-500    w-12 h-12 border-2 rounded-full border-green-600 transform hover:-translate-y-3  text-2xl text-green-500 hover:bg-green-600 hover:text-white">
+                                                                <i class="fab fa-whatsapp"></i>
+                                                            </button>
+                                                        </a>
+                                                        <!--Twitter Button -->
+                                                        <a href="">
+                                                            <button id="twitter"
+                                                                class="bg-white  transform hover:-translate-y-3  border-2 w-12 h-12 rounded-full duration-500 text-blue-400 border-blue-400 hover:bg-blue-400 hover:text-white text-2xl">
+                                                                <i class="fab fa-twitter"></i>
+                                                            </button>
+                                                        </a>
+                                                        <!--Linkedin Button-->
+                                                        <a href="">
+                                                            <button id="linkedin"
+                                                                class="bg-white transform hover:-translate-y-3  border-2 w-12 h-12 rounded-full duration-500 text-blue-500 border-blue-500  hover:bg-blue-500 hover:text-white text-2xl">
+                                                                <i class="fab fa-linkedin-in"></i>
+                                                            </button>
+                                                        </a>
+                                                        <!--Twitter Button -->
+                                                        <a href="">
+                                                            <button id="telegram"
+                                                                class="bg-white  transform hover:-translate-y-3  border-2 w-12 h-12 rounded-full duration-500 text-blue-400 border-blue-400 hover:bg-blue-400 hover:text-white text-2xl">
+                                                                <i class="fab fa-telegram-plane"></i>
+                                                            </button>
+                                                        </a>
+                                                        <!--Discord Button -->
+                                                        <a href="">
+                                                            <button id="discord"
+                                                                class="bg-white transform hover:-translate-y-3  border-2 w-12 h-12 rounded-full duration-500 text-indigo-500 border-indigo-500 hover:bg-indigo-500 hover:text-white text-2xl">
+                                                                <i class="fab fa-discord"></i>
+                                                            </button>
+                                                        </a>
+                                                        <!--Github Button -->
+                                                        <a href="">
+                                                            <button id="github"
+                                                                class="bg-white  sticky duration-500 border-2 border-black   w-12 transform hover:-translate-y-3   h-12 text-2xl rounded-full hover:bg-black hover:text-white text-black ">
+                                                                <i class="fab fa-github"></i>
+                                                            </button></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                   
                 </div>
-                  </div>
-                </div>
+                <!-- person 3 -->
+                <div class="lg:ml-5 pt-20">
+                    <div
+                        class="shadow-lg group container  rounded-md bg-white  max-w-xs flex  mx-auto contentshafeeq-div">
+                        <div>
+                            <div class="w-full image-cover rounded-t-md">
+                            </div>
+                            <div class="py-8 px-4 bg-white  rounded-b-md fd-cl group-hover:opacity-25">
+                                <span class="block text-lg text-gray-800 font-bold tracking-wide">Shafeeq
+                                    Badhusha</span>
+                                <span class="block text-gray-600 text-sm">Lorem, ipsum dolor sit amet
+                                    consectetur adipisicing elit. Laborum, maxime!
+                                </span>
+                            </div>
+                        </div>
+                        <div class="absolute opacity-0 fd-sh group-hover:opacity-100">
+                            <div class=" mb-4 lg:mr-32 lg:mt-3">
+                                <div class="mt-32 ml-5">
+                                    <h3 class="text-white font-bold mb-2 lg:mb-4"> Connect us</h3>
+                                    <div class=" flex lg:items-center lg:justify-center">
+                                        <div class="lg:container lg:max-w-screen-lg lg:mx-auto">
+                                            <div>
+                                                <div class="">
+                                                    <div class="grid grid-cols-4 gap-4">
+                                                        <!--Facebook Button -->
+                                                        <a href="">
+                                                            <button id="facebook"
+                                                                class="bg-white  sticky duration-500 border-2 border-blue-600 fixed  w-12 transform hover:-translate-y-3   h-12 text-2xl rounded-full hover:bg-blue-600 hover:text-white text-blue-600 ">
+                                                                <i class="fab fa-facebook-f"></i>
+                                                            </button></a>
+                                                        <!--İnstagram Button -->
+                                                        <a href="">
+                                                            <button id="instagram"
+                                                                class=" border-2 hover:border-0 border-pink-500 bg-gradient-to-b text-2xl hover:from-indigo-600 hover:via-pink-600 hover:to-yellow-500 min-w-wull hover:text-white bg-white text-pink-600 w-12 h-12  transform hover:-translate-y-3 rounded-full duration-500 ">
+                                                                <i class="fab fa-instagram"></i>
+                                                            </button>
+                                                        </a>
+                                                        <!--Whatsapp Button -->
+                                                        <a href="">
+                                                            <button id="whatsapp"
+                                                                class="bg-white duration-500    w-12 h-12 border-2 rounded-full border-green-600 transform hover:-translate-y-3  text-2xl text-green-500 hover:bg-green-600 hover:text-white">
+                                                                <i class="fab fa-whatsapp"></i>
+                                                            </button>
+                                                        </a>
+                                                        <!--Twitter Button -->
+                                                        <a href="">
+                                                            <button id="twitter"
+                                                                class="bg-white  transform hover:-translate-y-3  border-2 w-12 h-12 rounded-full duration-500 text-blue-400 border-blue-400 hover:bg-blue-400 hover:text-white text-2xl">
+                                                                <i class="fab fa-twitter"></i>
+                                                            </button>
+                                                        </a>
+                                                        <!--Linkedin Button-->
+                                                        <a href="">
+                                                            <button id="linkedin"
+                                                                class="bg-white transform hover:-translate-y-3  border-2 w-12 h-12 rounded-full duration-500 text-blue-500 border-blue-500  hover:bg-blue-500 hover:text-white text-2xl">
+                                                                <i class="fab fa-linkedin-in"></i>
+                                                            </button>
+                                                        </a>
+                                                        <!--Twitter Button -->
+                                                        <a href="">
+                                                            <button id="telegram"
+                                                                class="bg-white  transform hover:-translate-y-3  border-2 w-12 h-12 rounded-full duration-500 text-blue-400 border-blue-400 hover:bg-blue-400 hover:text-white text-2xl">
+                                                                <i class="fab fa-telegram-plane"></i>
+                                                            </button>
+                                                        </a>
+                                                        <!--Discord Button -->
+                                                        <a href="">
+                                                            <button id="discord"
+                                                                class="bg-white transform hover:-translate-y-3  border-2 w-12 h-12 rounded-full duration-500 text-indigo-500 border-indigo-500 hover:bg-indigo-500 hover:text-white text-2xl">
+                                                                <i class="fab fa-discord"></i>
+                                                            </button>
+                                                        </a>
+                                                        <!--Reddit Button -->
+                                                        <a href="">
+                                                            <button id="reddit"
+                                                                class="bg-white transform hover:-translate-y-3  border-2 w-12 h-12 rounded-full duration-500 text-yellow-600 border-yellow-600 hover:bg-yellow-600 hover:text-white text-2xl">
+                                                                <i class="fab fa-reddit-alien"></i>
+                                                            </button>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-<div class="lg:flex">               <!-- component -->
-    <div class="ml-5 pt-20">
-      <div class="shadow-lg group container  rounded-md bg-white  max-w-xs flex  mx-auto content-div">
-          <div>
-          <div  class="w-full image-cover rounded-t-md" >
-            
-          </div>
-          <div class="py-8 px-4 bg-white  rounded-b-md fd-cl group-hover:opacity-25">
-            <span class="block text-lg text-gray-800 font-bold tracking-wide">Team member 4</span>
-            <span  class="block text-gray-600 text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, maxime!
-            </span>
-        </div>
-        </div>
-        <div class="absolute opacity-0 fd-sh group-hover:opacity-100">
-          <div class="mt-32 ml-5">
-                 <h3 class="text-white font-bold mb-2 lg:mb-4"> Connect us</h3>
-                 <div class=" flex lg:items-center lg:justify-center">
-                     <div class="lg:container lg:max-w-screen-lg lg:mx-auto">
-                         <div>
-                             <div class="lg:flex lg:flex-wrap lg:justify-center gap-2">
-                                 <a href="">
-                                     <button
-                                         class="bg-blue-500 hover:bg-white p-2 font-semibold text-white hover:text-black inline-flex items-center space-x-2 rounded">
-                                         <svg class="w-5 h-5 fill-current" role="img"
-                                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                             <path
-                                                 d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                                         </svg>
-                                     </button>
-                                 </a>
-                                 <a href="https://github.com/ilyasbabu/questio-bank-django">
-                                     <button
-                                         class="bg-gray-700 hover:bg-white hover:text-black  p-2 font-semibold text-white inline-flex items-center space-x-2 rounded">
-                                         <svg xmlns="http://www.w3.org/2000/svg"
-                                             xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
-                                             role="img" class="w-5" preserveAspectRatio="xMidYMid meet"
-                                             viewBox="0 0 24 24">
-                                             <g fill="none">
-                                                 <path fill-rule="evenodd" clip-rule="evenodd"
-                                                     d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385c.6.105.825-.255.825-.57c0-.285-.015-1.23-.015-2.235c-3.015.555-3.795-.735-4.035-1.41c-.135-.345-.72-1.41-1.23-1.695c-.42-.225-1.02-.78-.015-.795c.945-.015 1.62.87 1.845 1.23c1.08 1.815 2.805 1.305 3.495.99c.105-.78.42-1.305.765-1.605c-2.67-.3-5.46-1.335-5.46-5.925c0-1.305.465-2.385 1.23-3.225c-.12-.3-.54-1.53.12-3.18c0 0 1.005-.315 3.3 1.23c.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23c.66 1.65.24 2.88.12 3.18c.765.84 1.23 1.905 1.23 3.225c0 4.605-2.805 5.625-5.475 5.925c.435.375.81 1.095.81 2.22c0 1.605-.015 2.895-.015 3.3c0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"
-                                                     fill="currentColor" />
-                                             </g>
-                                         </svg>
-                                     </button>
-                                 </a>
-                                 <a href="">
-                                     <button
-                                         class="bg-blue-400 p-2 hover:bg-white hover:text-black font-semibold  text-white inline-flex items-center space-x-2 rounded">
-                                         <svg class="w-5 h-5 fill-current" role="img"
-                                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                             <path
-                                                 d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
-                                         </svg>
-                                     </button>
-                                 </a>
-                                 <a href="">
-                                     <button
-                                         class="bg-red-500 p-2 hover:bg-white hover:text-black font-semibold text-white inline-flex items-center space-x-2 rounded">
-                                         <svg class="w-5 h-5 fill-current" role="img" viewBox="0 0 24 24"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                             <path
-                                                 d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z" />
-                                         </svg>
-                                     </button>
-                                 </a>
-                                 
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-    </div>
-    </div>
-   
-</div>
-  <div class="ml-5 pt-20">
-      <div class="shadow-lg group container  rounded-md bg-white  max-w-xs flex  mx-auto content-div">
-          <div>
-          <div  class="w-full image-cover rounded-t-md" >
-            
-          </div>
-          <div class="py-8 px-4 bg-white  rounded-b-md fd-cl group-hover:opacity-25">
-            <span class="block text-lg text-gray-800 font-bold tracking-wide">Team member 3</span>
-            <span  class="block text-gray-600 text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, maxime!
-            </span>
-        </div>
-        </div>
-        <div class="absolute opacity-0 fd-sh group-hover:opacity-100">
-       
-       <div class=" mb-4 lg:mr-32 lg:mt-3">
-        
-        <div class="mt-32 ml-5">
-            <h3 class="text-white font-bold mb-2 lg:mb-4"> Connect us</h3>
-            <div class=" flex lg:items-center lg:justify-center">
-                <div class="lg:container lg:max-w-screen-lg lg:mx-auto">
-                    <div>
-                        <div class="lg:flex lg:flex-wrap lg:justify-center gap-2">
-                            <a href="">
-                                <button
-                                    class="bg-blue-500 hover:bg-white p-2 font-semibold text-white hover:text-black inline-flex items-center space-x-2 rounded">
-                                    <svg class="w-5 h-5 fill-current" role="img"
-                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                        <path
-                                            d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                                    </svg>
-                                </button>
-                            </a>
-                            <a href="https://github.com/ilyasbabu/questio-bank-django">
-                                <button
-                                    class="bg-gray-700 hover:bg-white hover:text-black  p-2 font-semibold text-white inline-flex items-center space-x-2 rounded">
-                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                        xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
-                                        role="img" class="w-5" preserveAspectRatio="xMidYMid meet"
-                                        viewBox="0 0 24 24">
-                                        <g fill="none">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385c.6.105.825-.255.825-.57c0-.285-.015-1.23-.015-2.235c-3.015.555-3.795-.735-4.035-1.41c-.135-.345-.72-1.41-1.23-1.695c-.42-.225-1.02-.78-.015-.795c.945-.015 1.62.87 1.845 1.23c1.08 1.815 2.805 1.305 3.495.99c.105-.78.42-1.305.765-1.605c-2.67-.3-5.46-1.335-5.46-5.925c0-1.305.465-2.385 1.23-3.225c-.12-.3-.54-1.53.12-3.18c0 0 1.005-.315 3.3 1.23c.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23c.66 1.65.24 2.88.12 3.18c.765.84 1.23 1.905 1.23 3.225c0 4.605-2.805 5.625-5.475 5.925c.435.375.81 1.095.81 2.22c0 1.605-.015 2.895-.015 3.3c0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"
-                                                fill="currentColor" />
-                                        </g>
-                                    </svg>
-                                </button>
-                            </a>
-                            <a href="">
-                                <button
-                                    class="bg-blue-400 p-2 hover:bg-white hover:text-black font-semibold  text-white inline-flex items-center space-x-2 rounded">
-                                    <svg class="w-5 h-5 fill-current" role="img"
-                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                        <path
-                                            d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
-                                    </svg>
-                                </button>
-                            </a>
-                            <a href="">
-                                <button
-                                    class="bg-red-500 p-2 hover:bg-white hover:text-black font-semibold text-white inline-flex items-center space-x-2 rounded">
-                                    <svg class="w-5 h-5 fill-current" role="img" viewBox="0 0 24 24"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z" />
-                                    </svg>
-                                </button>
-                            </a>
-                            
+                        </div>
+
+                    </div>
+                </div>
+                <!-- person 4 -->
+                <div class="lg:ml-5 pt-20">
+                    <div
+                        class="shadow-lg group container  rounded-md bg-white  max-w-xs flex  mx-auto contentsharath-div">
+                        <div>
+                            <div class="w-full image-cover rounded-t-md">
+
+                            </div>
+                            <div class="py-8 px-4 bg-white  rounded-b-md fd-cl group-hover:opacity-25">
+                                <span class="block text-lg text-gray-800 font-bold tracking-wide">Sharath
+                                    Chandran</span>
+                                <span class="block text-gray-600 text-sm">Lorem, ipsum dolor sit amet
+                                    consectetur adipisicing elit. Laborum, maxime!
+                                </span>
+                            </div>
+                        </div>
+                        <div class="absolute opacity-0 fd-sh group-hover:opacity-100">
+                            <div class="mt-32 ml-5">
+                                <h3 class="text-white font-bold mb-2 lg:mb-4"> Connect</h3>
+                                <div class=" flex lg:items-center lg:justify-center">
+                                    <div class="lg:container lg:max-w-screen-lg lg:mx-auto">
+                                        <div>
+                                            <div class="">
+                                                <div class="grid grid-cols-4 gap-4">
+                                                    <!--Facebook Button -->
+                                                    <a href="">
+                                                        <button id="facebook"
+                                                            class="bg-white  sticky duration-500 border-2 border-blue-600 fixed  w-12 transform hover:-translate-y-3   h-12 text-2xl rounded-full hover:bg-blue-600 hover:text-white text-blue-600 ">
+                                                            <i class="fab fa-facebook-f"></i>
+                                                        </button></a>
+                                                    <!--İnstagram Button -->
+                                                    <a href="">
+                                                        <button id="instagram"
+                                                            class=" border-2 hover:border-0 border-pink-500 bg-gradient-to-b text-2xl hover:from-indigo-600 hover:via-pink-600 hover:to-yellow-500 min-w-wull hover:text-white bg-white text-pink-600 w-12 h-12  transform hover:-translate-y-3 rounded-full duration-500 ">
+                                                            <i class="fab fa-instagram"></i>
+                                                        </button>
+                                                    </a>
+                                                    <!--Whatsapp Button -->
+                                                    <a href="">
+                                                        <button id="whatsapp"
+                                                            class="bg-white duration-500    w-12 h-12 border-2 rounded-full border-green-600 transform hover:-translate-y-3  text-2xl text-green-500 hover:bg-green-600 hover:text-white">
+                                                            <i class="fab fa-whatsapp"></i>
+                                                        </button>
+                                                    </a>
+                                                    <!--Twitter Button -->
+                                                    <a href="">
+                                                        <button id="twitter"
+                                                            class="bg-white  transform hover:-translate-y-3  border-2 w-12 h-12 rounded-full duration-500 text-blue-400 border-blue-400 hover:bg-blue-400 hover:text-white text-2xl">
+                                                            <i class="fab fa-twitter"></i>
+                                                        </button>
+                                                    </a>
+                                                    <!--Linkedin Button-->
+                                                    <a href="">
+                                                        <button id="linkedin"
+                                                            class="bg-white transform hover:-translate-y-3  border-2 w-12 h-12 rounded-full duration-500 text-blue-500 border-blue-500  hover:bg-blue-500 hover:text-white text-2xl">
+                                                            <i class="fab fa-linkedin-in"></i>
+                                                        </button>
+                                                    </a>
+                                                    <!--Twitter Button -->
+                                                    <a href="">
+                                                        <button id="telegram"
+                                                            class="bg-white  transform hover:-translate-y-3  border-2 w-12 h-12 rounded-full duration-500 text-blue-400 border-blue-400 hover:bg-blue-400 hover:text-white text-2xl">
+                                                            <i class="fab fa-telegram-plane"></i>
+                                                        </button>
+                                                    </a>
+                                                    <!--Discord Button -->
+                                                    <a href="">
+                                                        <button id="discord"
+                                                            class="bg-white transform hover:-translate-y-3  border-2 w-12 h-12 rounded-full duration-500 text-indigo-500 border-indigo-500 hover:bg-indigo-500 hover:text-white text-2xl">
+                                                            <i class="fab fa-discord"></i>
+                                                        </button>
+                                                    </a>
+                                                    <!--Reddit Button -->
+                                                    <a href="">
+                                                        <button id="reddit"
+                                                            class="bg-white transform hover:-translate-y-3  border-2 w-12 h-12 rounded-full duration-500 text-yellow-600 border-yellow-600 hover:bg-yellow-600 hover:text-white text-2xl">
+                                                            <i class="fab fa-reddit-alien"></i>
+                                                        </button>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-       
-    </div>
-   
-</div>
-  </div>
-<style>
-  .contentmufeed-div{
-  background-image:url('media/mufeed.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position:center;
-}
-  .contentmufeed-div:hover{
-    background-image:
-    linear-gradient(to right,
-     rgba(25, 29, 111, 0.801), hsla(160, 64%, 43%, 0.801) ),
-     url('media/mufeed.jpg');
-    }
-
-    .image-cover  {
-      height:260px;
-    }
-  /*
-  -remove the classes below if you have the 'group-hover'property added in your tailwind config file
-  -also remove the class from the html template
-  */
-    .content-div:hover .fd-cl{ 
- opacity: 0.25;
-    }
-    .content-div:hover .fd-sh{ 
- opacity: 1;
-    }
-
-
-    .contentilyas-div{
-        background-image:url('media/ilyas.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position:center;
-      }
-        .contentilyas-div:hover{
-          background-image:
-          linear-gradient(to right,
-           rgba(25, 29, 111, 0.801), hsla(160, 64%, 43%, 0.801) ),
-           url('media/ilyas.jpg');
-          }
-      
-          .image-cover  {
-            height:260px;
-          }
-        /*
-        -remove the classes below if you have the 'group-hover'property added in your tailwind config file
-        -also remove the class from the html template
-        */
-          .content-div:hover .fd-cl{ 
-       opacity: 0.25;
-          }
-          .content-div:hover .fd-sh{ 
-       opacity: 1;
-          }
-
-          .content-div{
-            background-image:url('media/avtr.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position:center;
-          }
-            .content-div:hover{
-              background-image:
-              linear-gradient(to right,
-               rgba(25, 29, 111, 0.801), hsla(160, 64%, 43%, 0.801) ),
-               url('media/avtr.jpg');
-              }
-          
-              .image-cover  {
-                height:260px;
-              }
-            /*
-            -remove the classes below if you have the 'group-hover'property added in your tailwind config file
-            -also remove the class from the html template
-            */
-              .content-div:hover .fd-cl{ 
-           opacity: 0.25;
-              }
-              .content-div:hover .fd-sh{ 
-           opacity: 1;
-              }
-  
-  </style>
-            </div>
-			</div>
-		</div>
-	</div>
-</div>
-</div>
-
-
+        </div>
+        <script>
+            tippy('#facebook', {
+                content: 'Facebook',
+                animation: 'fade',
+                delay: [200, 200]
+            });
+            tippy('#instagram', {
+                content: 'Instagram',
+                animation: 'fade',
+                delay: [200, 200]
+            });
+            tippy('#whatsapp', {
+                content: 'Whatsapp',
+                animation: 'fade',
+                delay: [200, 200]
+            });
+            tippy('#twitter', {
+                content: 'Twitter',
+                animation: 'fade',
+                delay: [200, 200]
+            });
+            tippy('#youtube', {
+                content: 'Youtube',
+                animation: 'fade',
+                placement: 'left-start',
+                delay: [200, 200]
+            });
+            tippy('#telegram', {
+                content: 'Telegram',
+                animation: 'fade',
+                placement: 'left-start',
+                delay: [200, 200]
+            });
+            tippy('#reddit', {
+                content: 'Reddit',
+                animation: 'fade',
+                placement: 'bottom',
+                delay: [200, 200]
+            });
+            tippy('#googleplus', {
+                content: 'Google +',
+                animation: 'fade',
+                placement: 'bottom',
+                delay: [200, 200]
+            });
+            tippy('#skype', {
+                content: 'Skype',
+                animation: 'fade',
+                placement: 'bottom',
+                delay: [200, 200]
+            });
+            tippy('#line', {
+                content: 'Line',
+                animation: 'fade',
+                placement: 'bottom',
+                delay: [200, 200]
+            });
+            tippy('#discord', {
+                content: 'Discord',
+                animation: 'fade',
+                placement: 'right-start',
+                delay: [200, 200]
+            });
+            tippy('#tiktok', {
+                content: 'Tiktok',
+                animation: 'fade',
+                placement: 'right-start',
+                delay: [200, 200]
+            });
+            tippy('#linkedin', {
+                content: 'Linkedin',
+                animation: 'fade',
+                placement: 'top',
+                delay: [200, 200]
+            });
+            tippy('#snapchat', {
+                content: 'Snapchat',
+                animation: 'fade',
+                placement: 'top',
+                delay: [200, 200]
+            });
+            tippy('#pinterest', {
+                content: 'Pinterest',
+                animation: 'fade',
+                placement: 'bottom',
+                delay: [200, 200],
+            });
+            tippy('#spotify', {
+                content: 'Spotify',
+                animation: 'fade',
+                placement: 'bottom',
+                delay: [200, 200]
+            });
+            tippy('#github', {
+                content: 'Github',
+                animation: 'fade',
+                placement: 'bottom',
+                delay: [200, 200]
+            });
+        </script>
+    </main>
     <footer class="w-screen p-4 bottom-0 h-auto relative bg-gray-600 ">
         <div class="lg:flex lg: lg:mt-3 lg:mx-28">
             <div class="mb-4 lg:columns-1 w-96 lg:mr-36">
@@ -458,9 +599,8 @@
                                         <button
                                             class="bg-gray-700 hover:bg-white hover:text-black  p-2 font-semibold text-white inline-flex items-center space-x-2 rounded">
                                             <svg xmlns="http://www.w3.org/2000/svg"
-                                                xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
-                                                role="img" class="w-5" preserveAspectRatio="xMidYMid meet"
-                                                viewBox="0 0 24 24">
+                                                xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"
+                                                class="w-5" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
                                                 <g fill="none">
                                                     <path fill-rule="evenodd" clip-rule="evenodd"
                                                         d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385c.6.105.825-.255.825-.57c0-.285-.015-1.23-.015-2.235c-3.015.555-3.795-.735-4.035-1.41c-.135-.345-.72-1.41-1.23-1.695c-.42-.225-1.02-.78-.015-.795c.945-.015 1.62.87 1.845 1.23c1.08 1.815 2.805 1.305 3.495.99c.105-.78.42-1.305.765-1.605c-2.67-.3-5.46-1.335-5.46-5.925c0-1.305.465-2.385 1.23-3.225c-.12-.3-.54-1.53.12-3.18c0 0 1.005-.315 3.3 1.23c.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23c.66 1.65.24 2.88.12 3.18c.765.84 1.23 1.905 1.23 3.225c0 4.605-2.805 5.625-5.475 5.925c.435.375.81 1.095.81 2.22c0 1.605-.015 2.895-.015 3.3c0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"
@@ -522,11 +662,11 @@
         </div>
         <div>
             <div class="flex justify-center mt-2">
-                <p class="text-gray-400">Copyright © 2021. All Right Reserved. Created By
+                <p class="text-gray-400"> Copyright &copy;
+                    <script>document.write(new Date().getFullYear());</script> All rights reserved
                 </p>
             </div>
         </div>
     </footer>
-</div>
 </body>
 </html>
