@@ -13,7 +13,7 @@
 
 </head>
 
-<body >
+<body>
     <div class="m-0 p-0 ">
         <!-- nav start -->
         <div class="w-full border-b-2 shadow-lg fixed bg-white z-30">
@@ -87,39 +87,84 @@
         </div>
         <!-- nav end -->
 
-        <main>
-            <div class="pt-44 lg:pt-28 pb-8 ">
-                <div>
-                    <h1 class="text-2xl mx-10 lg:mx-44 mb-4 text-slate-700">Add Questions</h1>
-                </div>
-                <div class="mx-12 lg:mx-56">
-                    <form action="addquestion" method="get">
-                        <label for="question" class="text-lg text-slate-700">Question <span class="text-red-600">*</span></label>
-                        <input type="text" name="question" id="question" required placeholder="  Type the question here" class="block 
+        <main class="min-h-screen">
+            <div class="pt-44 lg:pt-28 pb-8 flex ">
+                <div class="w-full ">
+                    <div>
+                        <h1 class="text-2xl mx-10 lg:mx-44 mb-4 text-slate-700">Add Questions</h1>
+                    </div>
+                    <div class="mx-12 lg:mx-56">
+                        <form action="addquestion" method="get">
+
+                            <label for="question" class="text-lg text-slate-700">Question <span
+                                    class="text-red-600">*</span></label>
+                            <input type="text" name="question" id="question" required
+                                placeholder="  Type the question here" class="block 
                         rounded border-slate-700 border px-2 w-full h-12">
-                        <label for="question" class="text-lg text-slate-700">Answer  <span class="text-red-600">*</span></label>
-                        <input type="text" name="question" id="question" required placeholder="  Type the answer here" class="block rounded border-slate-700 border px-2 w-full h-12">
-                        <label for="question" class="text-lg text-slate-700">Keywords <span class="text-red-600">*</span></label>
-                        <input type="text" name="question" id="question" required placeholder="  Type important keywords related to question" class="block rounded border-slate-700 border px-2 w-full h-12">
-                        <div class="lg:flex ">
-                    <div class="mr-5">
-                        <label for="question" class="text-lg text-slate-700">Date <span class="text-red-600">*</span></label>
-                        <input type="month" name="question" id="question" required placeholder="  Type the answer here" class="block rounded border-slate-700 border px-2 w-full h-12">
+
+                            <label for="answer" class="text-lg text-slate-700">Answer <span
+                                    class="text-red-600">*</span></label>
+                            <input type="text" name="answer" id="answer" required placeholder="  Type the answer here"
+                                class="block rounded border-slate-700 border px-2 w-full h-12">
+
+                            <label for="keywords" class="text-lg text-slate-700">Keywords <span
+                                    class="text-red-600">*</span></label>
+                            <input type="text" name="keywords" id="keywords" required
+                                placeholder="  Type important keywords related to question"
+                                class="block rounded border-slate-700 border px-2 w-full h-12">
+
+                            <label for="university" class="text-lg text-slate-700">University <span
+                                    class="text-red-600">*</span></label>
+                            <input type="text" name="question" id="question" required
+                                placeholder="  University in which the qustion is asked" class="block 
+                        rounded border-slate-700 border px-2 w-full h-12">
+                        
+                        <label for="department" class="text-lg text-slate-700">Department <span
+                            class="text-red-600">*</span></label>
+                            <select name="department" id="department" required class="px-4 form-select mySelect block rounded border-slate-700 border  w-full h-12">
+                                    <option class="text-xl" selected="selected">Select Deaprtment</option>
+                                    <option class="text-xl" value="computer_science">Bsc. computer science</option>
+                                    <option class="text-xl" value="computer_science">Bsc. computer science</option>
+                                    <option class="text-xl" value="computer_science">Bsc. computer science</option>
+                                    <option class="text-xl" value="computer_science">Bsc. computer science</option>
+                            </select>
+
+                            <div class="lg:flex justify-between">
+                                <div class="mr-5 w-full">
+                                    <label for="year" class="text-lg text-slate-700">Year <span
+                                            class="text-red-600">*</span></label>
+                                    <input type="number" name="year" id="year" required
+                                        placeholder="  Year the question is asked" min="2000" max="2023"
+                                        class="block rounded border-slate-700 border px-2 w-full h-12">
+                                </div>
+                                <div class=" mb-2 w-full">
+                                    <label for="question" class="text-lg text-slate-700">Times asked </label>
+                                    <input type="number" name="question" id="question"
+                                        placeholder="  How many times asked"
+                                        class="block rounded border-slate-700 border px-2 w-full h-12">
+                                </div>
+                            </div>
+
+                            <label for="comment" class="text-lg text-slate-700">Comment</label>
+                            <input type="text" name="comment" id="comment"
+                                placeholder="  any comment regarding the question"
+                                class="block rounded border-slate-700 border px-2 w-full h-12 mb-2">
+
+
+
+                            <input type="checkbox" name="important" id="">
+                            <label for="important">This question important</label><br>
+                            <input type="checkbox" name="terms" id="terms" required> I Agree this question was asked on
+                            mentioned date <br><br>
+                            <input type="submit" value="Submit" id="submit"
+                                class="text-white lg:w-2/5 w-36 h-10 bg-slate-700 rounded">
+                            <input type="reset" class="text-white w-36 lg:w-2/5 h-10 bg-slate-700 rounded">
+                        </form>
                     </div>
-                    <div class="mr-5 mb-2">
-                        <label for="question" class="text-lg text-slate-700">Times asked </label>
-                        <input type="number" name="question" id="question"  placeholder="  How many times asked" class="block rounded border-slate-700 border px-2 w-full h-12">
-                    </div>
-                    </div>
-                
-                    <input type="checkbox" name="important" id="">
-                    <label for="important">This question important</label><br>
-                    <input type="checkbox" name="terms" id="terms" required >  I Agree this question was asked on mentioned date <br><br>
-                    <input type="submit" value="Submit" id="submit"  class="text-white lg:w-2/5 w-36 h-10 bg-slate-700 rounded">
-                    <input type="reset" class="text-white w-36 lg:w-2/5 h-10 bg-slate-700 rounded">
-                    </form>
                 </div>
+                <div></div>
             </div>
+            <div></div>
         </main>
 
 
@@ -127,7 +172,10 @@
             <div class="lg:flex  lg:mt-3 md:mx-12 lg:mx-28">
                 <div class="mb-4 lg:columns-1 w-96 lg:mr-36">
                     <p class="text-white font-bold mb-1 mt-3">About Us</p>
-                    <p class="text-gray-200 text-sm">We value diversity and belive that different backgrouds, ideas and perspectives are what makes us stronger and more capable as a team. Each and every one of us adds to our mission. We blend our strengths togehter, combining our experience and creative minds to bring the best ideas.
+                    <p class="text-gray-200 text-sm">We value diversity and belive that different backgrouds, ideas and
+                        perspectives are what makes us stronger and more capable as a team. Each and every one of us
+                        adds to our mission. We blend our strengths togehter, combining our experience and creative
+                        minds to bring the best ideas.
                     </p>
                 </div>
                 <div class="mb-4 lg:mr-32 lg:mt-3">
