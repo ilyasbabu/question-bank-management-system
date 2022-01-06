@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Question Bank</title>
+    <title>Add question</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="extend.css" />
     <script src="script.js"></script>
@@ -95,6 +95,11 @@
                     </div>
                     <div class="mx-12 lg:mx-56">
                         <form action="addquestion" method="get">
+                            <label for="username" class="text-lg text-slate-700">Username <span
+                                    class="text-red-600">*</span></label>
+                            <input type="text" name="username" id="username" required
+                                placeholder="  Type Username" class="block 
+                    rounded border-slate-700 border px-2 w-full h-12">
 
                             <label for="question" class="text-lg text-slate-700">Question <span
                                     class="text-red-600">*</span></label>
@@ -118,15 +123,24 @@
                             <input type="text" name="question" id="question" required
                                 placeholder="  University in which the qustion is asked" class="block 
                         rounded border-slate-700 border px-2 w-full h-12">
-                        
-                        <label for="department" class="text-lg text-slate-700">Department <span
-                            class="text-red-600">*</span></label>
-                            <select name="department" id="department" required class="px-4 form-select mySelect block rounded border-slate-700 border  w-full h-12">
-                                    <option class="text-xl" selected="selected">Select Deaprtment</option>
-                                    <option class="text-xl" value="computer_science">Bsc. computer science</option>
-                                    <option class="text-xl" value="computer_science">Bsc. computer science</option>
-                                    <option class="text-xl" value="computer_science">Bsc. computer science</option>
-                                    <option class="text-xl" value="computer_science">Bsc. computer science</option>
+
+                            <label for="department" class="text-lg text-slate-700">Department <span
+                                    class="text-red-600">*</span></label>
+                            <select name="department" id="department" required
+                                class="px-4 form-select mySelect block rounded border-slate-700 border  w-full h-12">
+                                <option class="text-xl" selected="selected">Select Deaprtment</option>
+                                <option class="text-xl" value="computer_science">Bsc. computer science</option>
+                                <option class="text-xl" value="computer_science">Bsc. computer science</option>
+                                <option class="text-xl" value="computer_science">Bsc. computer science</option>
+                                <option class="text-xl" value="computer_science">Bsc. computer science</option>
+                            </select>
+
+                            <label for="subject" class="text-lg text-slate-700">Subject <span
+                                    class="text-red-600">*</span></label>
+                            <select name="subject" id="subject" required
+                                class="px-4 form-select mySelect block rounded border-slate-700 border  w-full h-12">
+                                <option class="text-xl" selected="selected">Select Subject</option>
+                                <option class="text-xl" value="computer_science">computer science</option>
                             </select>
 
                             <div class="lg:flex justify-between">
@@ -172,7 +186,10 @@
             <div class="lg:flex  lg:mt-3 md:mx-12 lg:mx-28 lg:justify-between">
                 <div class="mb-4 lg:columns-1 w-96">
                     <p class="text-white font-bold mb-1 mt-3">About Us</p>
-                    <p class="text-gray-200 text-sm">We value diversity and belive that different backgrouds, ideas and perspectives are what makes us stronger and more capable as a team. Each and every one of us adds to our mission. We blend our strengths togehter, combining our experience and creative minds to bring the best ideas.
+                    <p class="text-gray-200 text-sm">We value diversity and belive that different backgrouds, ideas and
+                        perspectives are what makes us stronger and more capable as a team. Each and every one of us
+                        adds to our mission. We blend our strengths togehter, combining our experience and creative
+                        minds to bring the best ideas.
                     </p>
                 </div>
                 <div class="mb-4  lg:mt-3">
@@ -182,7 +199,7 @@
                             <div class="lg:container lg:max-w-screen-lg ">
                                 <div>
                                     <div class="lg:flex lg:flex-wrap gap-2 ">
-                                        
+
                                         <a href="https://github.com/ilyasbabu/questio-bank-django">
                                             <button
                                                 class="bg-gray-700 hover:bg-white hover:text-black  p-2 font-semibold text-white inline-flex items-center space-x-2 rounded">
