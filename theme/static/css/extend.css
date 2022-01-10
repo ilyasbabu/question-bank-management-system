@@ -1,0 +1,91 @@
+.marginsign{
+    margin-top: 18px;
+}
+@media (min-width: 1024px){
+    .marginsign{
+        margin-top: 0px;
+    }
+}
+
+
+.contentmufeed-div {
+    background-image: url('media/mufeed.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.contentmufeed-div:hover {
+    background-image:
+        linear-gradient(to right,
+            rgba(25, 29, 111, 0.801), hsla(160, 64%, 43%, 0.801)),
+        url('media/mufeed.jpg');
+}
+
+.image-cover {
+    height: 260px;
+}
+
+.content-div:hover .fd-cl {
+    opacity: 0.25;
+}
+
+.content-div:hover .fd-sh {
+    opacity: 1;
+}
+
+.contentilyas-div {
+    background-image: url('media/ilyas.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.contentilyas-div:hover {
+    background-image:
+        linear-gradient(to right,
+            rgba(25, 29, 111, 0.801), hsla(160, 64%, 43%, 0.801)),
+        url('media/ilyas.jpg');
+}
+
+.contentsharath-div {
+    background-image: url('media/sharath.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.contentsharath-div:hover {
+    background-image:
+        linear-gradient(to right,
+            rgba(25, 29, 111, 0.801), hsla(160, 64%, 43%, 0.801)),
+        url('media/sharath.jpg');
+}
+
+.contentshafeeq-div {
+    background-image: url('media/shafeeeq.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.contentshafeeq-div:hover {
+    background-image:
+        linear-gradient(to right,
+            rgba(25, 29, 111, 0.801), hsla(160, 64%, 43%, 0.801)),
+        url('media/shafeeeq.jpg');
+}
+  /**
+   * PurgeCSS:
+   * text-red-500
+   * text-green-500
+   * text-yellow-500
+   * text-gray-500
+   * text-purple-500
+   * text-indigo-500
+   * text-blue-500
+   * text-pink-500
+   *
+
+   */
+

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}
+		Feedback
+		{% endblock title %}
+    {% block content %}
+
+    <div class="flex justify-center ">
+        <div class="shadow-2xl h-screen lg:w-1/2 w-full drop-shadow-xl flex justify-center items-center">
+            <div>
+
+                <form>
+                    <div>
+                        <span class="text-sm text-slate-700"></span>
+                        <h1 class="text-2xl text-slate-600 font-bold">Feedback</h1>
+                    </div>
+                    <div class="my-3">
+                        <label class="block text-md mb-2 text-slate-700" for="email">Email</label>
+                        <input class="px-4 w-full border-2 py-2 rounded-md text-sm outline-none" type="email"
+                            name="password" placeholder="yourname@email.com">
+                    </div>
+                    <div class="mt-5">
+                        <label class="block text-md mb-2 text-slate-700" for="password">Feedback</label>
+                        <textarea class="px-4 w-full border-2 py-2 rounded-md text-sm outline-none" rows="4" cols="50" placeholder="your feedback here"></textarea>
+                    </div>
+
+                    
+                    <div class="">
+                        <button
+                            class="mt-4 mb-3 w-full bg-slate-500 hover:bg-green-400 text-white py-2 rounded-md transition duration-100">Submit</button>
+
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    {% endblock %}
