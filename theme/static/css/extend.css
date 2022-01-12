@@ -9,7 +9,7 @@
 
 
 .contentmufeed-div {
-    background-image: url('media/mufeed.jpg');
+    background-image: url('/static/media/mufeed.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -19,7 +19,7 @@
     background-image:
         linear-gradient(to right,
             rgba(25, 29, 111, 0.801), hsla(160, 64%, 43%, 0.801)),
-        url('media/mufeed.jpg');
+        url('/static/media/mufeed.jpg');
 }
 
 .image-cover {
@@ -35,7 +35,7 @@
 }
 
 .contentilyas-div {
-    background-image: url('media/ilyas.jpg');
+    background-image: url('/static/media/ilyas.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -45,11 +45,11 @@
     background-image:
         linear-gradient(to right,
             rgba(25, 29, 111, 0.801), hsla(160, 64%, 43%, 0.801)),
-        url('media/ilyas.jpg');
+        url('/static/media/ilyas.jpg');
 }
 
 .contentsharath-div {
-    background-image: url('media/sharath.jpg');
+    background-image: url('/static/media/sharath.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -59,11 +59,11 @@
     background-image:
         linear-gradient(to right,
             rgba(25, 29, 111, 0.801), hsla(160, 64%, 43%, 0.801)),
-        url('media/sharath.jpg');
+        url('/static/media/sharath.jpg');
 }
 
 .contentshafeeq-div {
-    background-image: url('media/shafeeeq.jpg');
+    background-image: url('/static/media/shafeeeq.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -73,7 +73,7 @@
     background-image:
         linear-gradient(to right,
             rgba(25, 29, 111, 0.801), hsla(160, 64%, 43%, 0.801)),
-        url('media/shafeeeq.jpg');
+        url('/static/media/shafeeeq.jpg');
 }
   /**
    * PurgeCSS:
