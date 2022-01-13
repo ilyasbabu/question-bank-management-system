@@ -8,7 +8,6 @@
     <title>Question Bank</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="extend.css" />
-    <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
 
@@ -16,74 +15,67 @@
     <div class="m-0 p-0 ">
         <!-- nav start -->
         <div class="w-full border-b-2 shadow-lg fixed bg-white z-30">
-            <nav class="flex items-center justify-between flex-wrap p-6 sm:mx-14 md:mx-6 mx-4 ">
-                <div class="flex items-center flex-shrink-0 text-slate-700 mr-6">
+            <nav class="flex items-center justify-between flex-wrap p-6 sm:mx-14 md:mx-6">
+                
+                <div  class="flex items-center flex-shrink-0 text-slate-700 lg:ml-auto mr-5">
                     <span class="text-4xl lg:text-2xl font-bold tracking-tight"><a href="index.html">Question
                             Bank</a></span>
                 </div>
-                <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-                    <div class="text-lg lg:flex-grow">
+                
+                <svg id="burger" xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6 text-black md:hidden  hover:cursor-pointer"  fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round"  stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                <div id="menu" class="w-full  hidden  text-black flex-grow md:flex md:items-center md:w-auto ml-3 lg:ml-0 mt-1">
+                    <div class="text-lg md:flex-grow">
                         <a href="addquestion.html"
-                            class="hidden mt-4 lg:inline-block lg:mt-0 text-slate-600 hover:text-black mr-4">
+                            class=" block md:inline-block lg:mt-0 mt-3 lg:text-lg text-xl font-medium lg:font-normal text-slate-600 hover:text-black mr-4">
                             Add question
                         </a>
                         <a href="feedback.html"
-                            class="hidden mt-4 lg:inline-block lg:mt-0 text-slate-600 hover:text-black mr-4">
+                            class=" block md:inline-block lg:mt-0 mt-3 lg:text-lg text-xl font-medium lg:font-normal text-slate-600 hover:text-black mr-4">
                             Feedback
                         </a>
                         <a href="about.html"
-                            class="hidden mt-4 mb-2 lg:mb-0 lg:inline-block lg:mt-0 text-slate-600 hover:text-black">
+                            class="lg:mb-0 block md:inline-block lg:mt-0 my-3 lg:text-lg text-xl font-medium lg:font-normal text-slate-600 hover:text-black">
                             About
                         </a>
                     </div>
-                    <div class="marginsign lg:flex ">
+                    <div class=" lg:flex md:bg-slate-600 rounded">
                         <a href="login.html"
-                            class="hidden lg:inline mb-3 lg:mb-0 lg:px-5 py-2 leading-none rounded text-slate-600 text-lg hover:border-transparent hover:text-slate-700 hover:font-semibold  mt-4 lg:mt-0">Sign
-                            up/login</a>
-                        <div class="mt-3 lg:mt-0">
-                            <input type="text" class="border-2 rounded-md h-8 " placeholder="  search">
-                            <input type="submit"
-                                class="border bg-slate-600 text-white w-20 h-8 lg:mr-2  rounded font-semibold"
-                                value="Search">
-                        </div>
-                        <div class="flex justify-end h-screen absolute right-8 -bottom-10 -top-28 lg:hidden">
-                            <div x-data="{ dropdownOpen: false }" class="relative my-32">
-                                <button @click="dropdownOpen = !dropdownOpen"
-                                    class="relative z-10 block rounded-md bg-white p-2 focus:outline-none">
-                                    <svg class="h-10 w-10 text-gray-800" xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd"
-                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                            clip-rule="evenodd" />
-                                    </svg>
-                                </button>
-                                <div x-show="dropdownOpen" @click="dropdownOpen = false"
-                                    class="fixed inset-0 h-full w-full z-10"></div>
-                                <div x-show="dropdownOpen"
-                                    class="absolute right-0 mt-2 py-2 w-48 bg-white rounded-md shadow-xl z-20">
-                                    <a href="addquestion.html"
-                                        class="block px-4 py-2 text-lg hover:font-semibold capitalize text-gray-700 hover:bg-slate-500 hover:text-white">
-                                        Add Question
-                                    </a>
-                                    <a href="feedback.html"
-                                        class="block px-4 py-2 text-lg hover:font-semibold capitalize text-gray-700 hover:bg-slate-500 hover:text-white">
-                                        Feedback
-                                    </a>
-                                    <a href="about.html"
-                                        class="block px-4 py-2 text-lg hover:font-semibold capitalize text-gray-700 hover:bg-slate-500 hover:text-white">
-                                        About
-                                    </a>
-                                    <a href="login.html"
-                                        class="block px-4 py-2 text-lg hover:font-semibold capitalize text-gray-700 hover:bg-slate-500 hover:text-white">
-                                        Sign up/Login
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                            class=" md:inline md:mb-0 md:px-5 md:py-2 leading-none rounded font-medium lg:font-normal text-slate-600 md:text-slate-50 text-xl lg:text-lg md:mt-0">Log in</a>
                     </div>
                 </div>
             </nav>
         </div>
+
+        <!-- <div class="w-full fixed top-0 z-40">
+            <div class="bg-white flex justify-between py-4 h-auto p-2 shadow-gray-600 shadow-md md:py-6">
+                <nav>
+
+                    <div id="menu" class="text-black hidden md:block">
+                        <ul class="md:flex md:gap-3 md:mr-32 md:text-lg">
+                            <li>
+                                <div class="transform hover:scale-110"><a href="index.html">Home</a></div>
+                            </li>
+                            <li>
+                                <div class="transform hover:scale-110"><a href="about.html">About</a></div>
+                            </li>
+                            <li>
+                                <div class="transform hover:scale-110"><a href="feedback.html">Feedback</a></div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="transform hover:scale-105">
+                    <a class="text-white text-lg md:ml-32 md:text-2xl font-bold" href="index.html">Event Calendar</a>
+                </div>
+
+            </div>
+        </div> -->
+
+
         <!-- nav end -->
         <main class="lg:px-28 md:py-24 lg:py-14 px-10 py-6 min-h-screen">
             <div class=" flex justify-between  pt-36 md:pt-14">
@@ -170,13 +162,13 @@
                         <div>
                             <input type="search"
                                 class="form-control  relative flex-auto min-w-0 block w-64 md:w-auto px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                                placeholder="Search with keywords" >
+                                placeholder="Search with keywords">
                         </div>
                         <div>
                             <button type="submit"
                                 class="px-6 py-2.5 bg-slate-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-slate-700 hover:shadow-lg focus:bg-slate-800  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-slate-800 active:shadow-lg transition duration-150 ease-in-out items-center">
-                                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="w-4"
-                                    role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search"
+                                    class="w-4" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                     <path fill="currentColor"
                                         d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z">
                                     </path>
@@ -222,7 +214,7 @@
         </main>
         <footer class="w-auto p-4 bottom-0 h-auto relative bg-gray-600 ">
             <div class="lg:flex  lg:mt-3 md:mx-12 lg:mx-28 lg:justify-between">
-                <div class="mb-4 lg:columns-1 w-96">
+                <div class="mb-4 lg:columns-1 md:w-96">
                     <p class="text-white font-bold mb-1 mt-3">About Us</p>
                     <p class="text-gray-200 text-sm">We value diversity and belive that different backgrouds, ideas and
                         perspectives are what makes us stronger and more capable as a team. Each and every one of us
@@ -313,6 +305,7 @@
             </div>
         </footer>
     </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
