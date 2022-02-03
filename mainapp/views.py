@@ -13,3 +13,7 @@ def feedback(request):
 
 def addquestion(request):
     return render(request, 'addquestion.html')
+
+#remove on production
+def temp(request):
+    return render(request, 'tempo.html')
