@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load static %}
+
 {% block title %}
 		Question bank
 		{% endblock title %}
@@ -16,9 +18,9 @@
                 </div>
                 <div class="flex pt-3">
                     <div class="mr-2 hover:border-b"><a href=""><img title="question and answer view"
-                                class="w-6 lg:w-8 " src="media/qa.png" alt=""></a></div>
+                                class="w-6 lg:w-8 " src="{% static 'media/qa.png' %}" alt=""></a></div>
                     <div class="mr-2 hover:border-b"><a href=""><img title="question only view" class="w-6 lg:w-8 "
-                                src="media/q.png" alt=""></a></div>
+                                src="{% static 'media/q.png' %}" alt=""></a></div>
                 </div>
             </div>
 
