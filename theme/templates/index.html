@@ -2,144 +2,160 @@
 {% load static %}
 
 {% block title %}
-		Question bank
-		{% endblock title %}
-    {% block content %}
+Question bank
+{% endblock title %}
+{% block content %}
 
 
-        <main class="lg:px-28 md:py-24 lg:py-14 px-10 py-6 min-h-screen">
-            <div class=" flex justify-between  pt-36 md:pt-14">
-                <div class="">
-                    <div>
-                        <h1 class="text-2xl text-slate-700">
-                            Find Questions
-                        </h1>
-                    </div>
-                </div>
-                <div class="flex pt-3">
-                    <div class="mr-2 hover:border-b"><a href=""><img title="question and answer view"
-                                class="w-6 lg:w-8 " src="{% static 'media/qa.png' %}" alt=""></a></div>
-                    <div class="mr-2 hover:border-b"><a href=""><img title="question only view" class="w-6 lg:w-8 "
-                                src="{% static 'media/q.png' %}" alt=""></a></div>
-                </div>
+<main class="lg:px-28 md:py-24 lg:py-14 px-10 py-6 min-h-screen">
+    <div class=" flex justify-between  pt-36 md:pt-14">
+        <div class="">
+            <div>
+                <h1 class="text-2xl text-slate-700">
+                    Find Questions
+                </h1>
             </div>
+        </div>
+        <!-- <div class="flex pt-3">
+            <div class="mr-2 hover:border-b"><a href=""><img title="question and answer view" class="w-6 lg:w-8 "
+                        src="{% static 'media/qa.png' %}" alt=""></a></div>
+            <div class="mr-2 hover:border-b"><a href=""><img title="question only view" class="w-6 lg:w-8 "
+                        src="{% static 'media/q.png' %}" alt=""></a></div>
+        </div> -->
+    </div>
 
 
-            <!-- start of primary dropdowns -->
-            <div class="rounded shadow-xl mb-10 mt-5 bg-gray-100">
-                <form action="" method="">
-                    <div class="hover:bg-slate-200 rounded-t-md">
-                        <select name="university" id="university" required
-                            class="px-4 form-select mySelect block outline-none cursor-pointer border-0 rounded-t-md font-semibold text-sm bg-gray-100 w-full h-12">
-                            <option class="text-xl" value="" selected="selected">University</option>
-                            <option class="text-xl" value="computer_science">Calicut university</option>
-                        </select>
-                    </div>
-                    <div class="hover:bg-slate-200 rounded-t-md">
-                        <select name="department" id="department" required
-                            class="px-4 form-select mySelect block outline-none cursor-pointer border-0 font-semibold text-sm bg-gray-100 w-full h-12">
-                            <option class="text-xl" value="" selected="selected">Department</option>
-                            <option class="text-xl" value="computer_science">Bsc. computer science</option>
-                        </select>
-                    </div>
-                    <div class="hover:bg-slate-200 rounded-t-md">
-                        <select name="semester" id="semester" required
-                            class="px-4 form-select mySelect block outline-none cursor-pointer border-0 font-semibold text-sm bg-gray-100 w-full h-12">
-                            <option class="text-xl" value="" selected="selected">Semester</option>
-                            <option class="text-xl" value="computer_science">1st semester</option>
-                            <option class="text-xl" value="computer_science">2nd semester</option>
-                            <option class="text-xl" value="computer_science">3rd semester</option>
-                            <option class="text-xl" value="computer_science">4th semester</option>
-                            <option class="text-xl" value="computer_science">5th semester</option>
-                            <option class="text-xl" value="computer_science">6th semester</option>
-                        </select>
-                    </div>
-                    <div class="hover:bg-slate-200 rounded-t-md">
-                        <select name="subject" id="subject" required
-                            class="px-4 form-select mySelect block outline-none cursor-pointer border-0 font-semibold text-sm bg-gray-100 w-full h-12">
-                            <option class="text-xl" value="" selected="selected">Subject</option>
-                            <option class="text-xl" value="computer_science">sub#1</option>
-                        </select>
-                    </div>
-                    <div class="flex gap-1 md:justify-end ">
-                        <input type="submit" value="Submit" id="submit"
-                            class="text-white lg:w-1/6 w-1/2 h-10 bg-slate-500 hover:bg-slate-700 cursor-pointer rounded-bl-md md:rounded-none transition duration-150 ease-in-out">
-                        <input type="reset"
-                            class="text-white w-1/2 lg:w-1/6 h-10 bg-slate-500 hover:bg-slate-700 cursor-pointer rounded-br-md transition duration-150 ease-in-out">
-                    </div>
-                </form>
+    <!-- start of primary dropdowns -->
+    <div class="rounded shadow-xl mb-10 mt-5 bg-gray-100">
+        <form action="" method="">
+            <div class="hover:bg-slate-200 rounded-t-md">
+                <select name="university" id="university" required
+                    class="px-4 form-select mySelect block outline-none cursor-pointer border-0 rounded-t-md font-semibold text-sm bg-gray-100 w-full h-12">
+                    <option class="text-xl" value="" selected="selected">University</option>
+                    <option class="text-xl" value="computer_science">Calicut university</option>
+                </select>
             </div>
-            <!-- end of primary dropdowns -->
-            <div class="md:flex md:justify-between">
-                <div class="mb-5">
-                    <div class="py-2">
-                        <h4>(no of results) results</h4>
-                    </div>
-                    <!-- sort -->
-                    <div class="border-2 hover:shadow-lg h-9 w-64 rounded flex relative ">
-                        <span class="p-1 ml-3 font-medium z-10">
-                            <p>Sort by</p>
-                        </span>
-                        <select name="" id="" class="absolute left-7 py-1 px-20 -ml-7 form-select border-none rounded">
-                            <option value="recent" class="text-sm">Most Recent</option>
-                            <option value="asked" class="text-sm">Most Asked</option>
-                            <option value="important" class="text-sm ">Important</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="md:mt-9">
-                    <form action="" method="get" class="w-full flex">
-                        <div>
-                            <input type="search"
-                                class="form-control relative flex-auto min-w-0 block w-56 md:w-auto px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded md:rounded-none md:rounded-l-md transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                                placeholder="Search with keywords" >
-                        </div>
-                        <div>
-                            <button type="submit"
-                                class="px-6 py-2.5 bg-slate-500 text-white font-medium text-xs leading-tight uppercase rounded md:rounded-r-lg shadow-md hover:bg-slate-700 hover:shadow-lg focus:bg-slate-800  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-slate-800 active:shadow-lg transition duration-150 ease-in-out items-center">
-                                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="w-4"
-                                    role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                    <path fill="currentColor"
-                                        d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z">
-                                    </path>
-                                </svg>
-                            </button>
-                        </div>
-                    </form>
-                </div>
+            <div class="hover:bg-slate-200 rounded-t-md">
+                <select name="department" id="department" required
+                    class="px-4 form-select mySelect block outline-none cursor-pointer border-0 font-semibold text-sm bg-gray-100 w-full h-12">
+                    <option class="text-xl" value="" selected="selected">Department</option>
+                    <option class="text-xl" value="computer_science">Bsc. computer science</option>
+                </select>
             </div>
-            <!-- sort ends -->
-            <!-- question answers -->
-            <div class="w-full bg-slate-200 px-9 py-4 my-5">
-                <div class="mb-2">
-                    <p><span class="font-medium">1.</span> Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Sunt, repudiandae. <span class="font-medium">(march 2019)</span></p>
+            <div class="hover:bg-slate-200 rounded-t-md">
+                <select name="semester" id="semester" required
+                    class="px-4 form-select mySelect block outline-none cursor-pointer border-0 font-semibold text-sm bg-gray-100 w-full h-12">
+                    <option class="text-xl" value="" selected="selected">Semester</option>
+                    <option class="text-xl" value="computer_science">1st semester</option>
+                    <option class="text-xl" value="computer_science">2nd semester</option>
+                    <option class="text-xl" value="computer_science">3rd semester</option>
+                    <option class="text-xl" value="computer_science">4th semester</option>
+                    <option class="text-xl" value="computer_science">5th semester</option>
+                    <option class="text-xl" value="computer_science">6th semester</option>
+                </select>
+            </div>
+            <div class="hover:bg-slate-200 rounded-t-md">
+                <select name="subject" id="subject" required
+                    class="px-4 form-select mySelect block outline-none cursor-pointer border-0 font-semibold text-sm bg-gray-100 w-full h-12">
+                    <option class="text-xl" value="" selected="selected">Subject</option>
+                    <option class="text-xl" value="computer_science">sub#1</option>
+                </select>
+            </div>
+            <div class="flex gap-1 md:justify-end ">
+                <input type="submit" value="Submit" id="submit"
+                    class="text-white lg:w-1/6 w-1/2 h-10 bg-slate-500 hover:bg-slate-700 cursor-pointer rounded-bl-md md:rounded-none transition duration-150 ease-in-out">
+                <input type="reset"
+                    class="text-white w-1/2 lg:w-1/6 h-10 bg-slate-500 hover:bg-slate-700 cursor-pointer rounded-br-md transition duration-150 ease-in-out">
+            </div>
+        </form>
+    </div>
+    <!-- end of primary dropdowns -->
+    <div class="md:flex md:justify-between">
+        <div class="mb-5">
+            <div class="py-2">
+                <h4>(no of results) results</h4>
+            </div>
+            <!-- sort -->
+            <!-- <div class="border-2 hover:shadow-lg h-9 w-64 rounded flex relative ">
+                <span class="p-1 ml-3 font-medium z-10">
+                    <p>Sort by</p>
+                </span>
+                <select name="" id="" class="absolute left-7 py-1 px-20 -ml-7 form-select border-none rounded">
+                    <option value="recent" class="text-sm">Most Recent</option>
+                    <option value="asked" class="text-sm">Most Asked</option>
+                    <option value="important" class="text-sm ">Important</option>
+                </select>
+            </div> -->
+            <div class=" rounded-md flex">
+                <p class="py-2 pl-1 font-medium">Sort by</p>
+                <form action="" method="post">
+                <select name="" id="" class=" border-none">
+                    <option value="recent" class="text-sm">Most Recent</option>
+                    <option value="asked" class="text-sm">Most Asked</option>
+                    <option value="important" class="text-sm ">Important</option>
+                </select>
+                <input type="submit" value="Apply" class="bg-slate-500 hover:bg-slate-700 text-white p-2 rounded transition ease-in-out duration-300 cursor-pointer">
+            </form>
+            </div>
+        </div>
+        <div class="md:mt-9">
+            <form action="" method="get" class="w-full flex">
+                <div>
+                    <input type="search"
+                        class="form-control relative flex-auto min-w-0 block w-56 md:w-auto px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded md:rounded-none md:rounded-l-md transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                        placeholder="Search with keywords">
                 </div>
                 <div>
-                    <p><span class="font-medium">A.</span> Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Pariatur deleniti, nihil in nesciunt
-                        fuga impedit assumenda earum nulla quod reiciendis officia itaque mollitia ut rerum natus
-                        voluptate hic numquam, suscipit minus commodi adipisci aliquam perspiciatis fugit. Quibusdam
-                        nostrum quas dolore voluptates? Ratione reiciendis fugiat est explicabo commodi. Beatae, error
-                        fugit.</p>
+                    <button type="submit"
+                        class="px-6 py-2.5 bg-slate-500 text-white font-medium text-xs leading-tight uppercase rounded md:rounded-r-lg shadow-md hover:bg-slate-700 hover:shadow-lg focus:bg-slate-800  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-slate-800 active:shadow-lg transition duration-150 ease-in-out items-center">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="w-4"
+                            role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path fill="currentColor"
+                                d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z">
+                            </path>
+                        </svg>
+                    </button>
                 </div>
-            </div>
-            <!-- end of question answers -->
-            <!-- question answers -->
-            <div class="w-full bg-slate-200 px-9 py-4 my-5">
-                <div class="mb-2">
-                    <p><span class="font-medium">2.</span> Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Sunt, repudiandae. <span class="font-medium">(april 2020)</span></p>
-                </div>
-                <div>
-                    <p><span class="font-medium">A.</span> Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Pariatur deleniti, nihil in nesciunt
-                        fuga impedit assumenda earum nulla quod reiciendis officia itaque mollitia ut rerum natus
-                        voluptate hic numquam, suscipit minus commodi adipisci aliquam perspiciatis fugit. Quibusdam
-                        nostrum quas dolore voluptates? Ratione reiciendis fugiat est explicabo commodi. Beatae, error
-                        fugit.</p>
-                </div>
-            </div>
-            <!-- end of question answers -->
-        </main>
+            </form>
+        </div>
+    </div>
+    <div class="mt-3 ml-2 md:hidden">
+        <h4 class="text-slate-500">Tap on the question to view answer</h4>
+    </div>
+    <!-- sort ends -->
+    <!-- question answers -->
+    <div class="w-full bg-slate-200 px-9 py-4 my-5 md:hover:bg-slate-300 transition ease-in-out duration-500"
+        title="Click on the question to view the answer">
+        <details class="list-none cursor-pointer ">
+            <summary class="list-none mb-2 ">
+                <span class="font-medium">1.</span> Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Sunt, repudiandae. <span class="font-medium">(march 2019)</span>
+            </summary>
+            <p><span class="font-medium">A.</span> Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Pariatur deleniti, nihil in nesciunt
+                fuga impedit assumenda earum nulla quod reiciendis officia itaque mollitia ut rerum natus
+                voluptate hic numquam, suscipit minus commodi adipisci aliquam perspiciatis fugit. Quibusdam
+                nostrum quas dolore voluptates? Ratione reiciendis fugiat est explicabo commodi. Beatae, error
+                fugit.</p>
+        </details>
+    </div>
+    <!-- end of question answers -->
+    <!-- question answers -->
+    <div class="w-full bg-slate-200 px-9 py-4 my-5 md:hover:bg-slate-300 transition ease-in-out duration-500"
+        title="Click on the question to view the answer">
+        <details class="list-none cursor-pointer ">
+            <summary class="list-none mb-2 ">
+                <span class="font-medium ">2.</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi cum
+                nulla tempora nihil incidunt eveniet vero, consequuntur officiis ducimus sunt, quae porro repellendus
+                tempore commodi quam velit accusamus ratione veritatis? <span class="font-medium">(april 2022)</span>
+            </summary>
+            <p><span class="font-medium">A.</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil neque
+                laborum magni, magnam maxime unde accusamus qui, atque ut sunt facilis. Enim, adipisci distinctio
+                accusamus quis tempore iure odio ut obcaecati nostrum eveniet quibusdam est repellendus ipsam eligendi
+                iste ipsum voluptatem incidunt culpa aspernatur ad sunt mollitia! Animi a quibusdam earum nihil
+                distinctio, velit impedit, vel eveniet dolores nostrum et.</p>
+        </details>
+    </div>
+    <!-- end of question answers -->
+</main>
 {% endblock %}
