@@ -7,7 +7,7 @@ charset-normalizer==2.0.10
 click==8.0.3
 colorama==0.4.4
 cookiecutter==1.7.3
-Django==4.0.1
+Django==4.0.2
 django-tailwind==3.0.1
 idna==3.3
 Jinja2==3.0.3
