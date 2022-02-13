@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from mainapp import views
+from testapp import views as tviews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,5 +25,6 @@ urlpatterns = [
     path('feedback/', views.feedback, name='feedback'),
     path('addquestion/', views.addquestion, name='addquestion'),
     path('temp/', views.temp, name='temp'),
-    path('qverify/',views.qverify,name='qverify')
+    path('qverify/',views.qverify,name='qverify'),
+    path('regcar/',tviews.regcar,name='regcar')
 ]

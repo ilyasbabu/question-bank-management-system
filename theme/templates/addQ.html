@@ -1,9 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block head %}
+{% endblock %}
 
 {% block title %}
 Question bank
 {% endblock title %}
+{% block style %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link href="{% static 'css/base.css' %}" rel="stylesheet">
+{% endblock style %}
 {% block content %}
 
 
@@ -15,20 +21,20 @@ Question bank
                 <h1 class="text-2xl mx-10 lg:mx-44 mb-4 text-slate-700">Add Questions</h1>
             </div>
             <div class="mx-12 lg:mx-56">
-                <form action="" method="post">
+                <form action="." method="post">
                     {% csrf_token %}
-                    <label for="question" class="text-lg text-slate-700">Question <span
+                    <label for="ques" class="text-lg text-slate-700">Question <span
                             class="text-red-600">*</span></label>
                     {{form.ques}}
                     <label for="answer" class="text-lg text-slate-700">Answer <span
                             class="text-red-600">*</span></label>
                     {{form.answer}}
-                    <label for="university" class="text-lg text-slate-700">University <span
+                    <label for="id_university_select" class="text-lg text-slate-700">University <span
                             class="text-red-600">*</span></label>
-                    {{form.university}}
-                    <label for="department" class="text-lg text-slate-700">Department <span
+                    {{form.university_select}}
+                    <label for="id_department_select" class="text-lg text-slate-700">Department <span
                             class="text-red-600">*</span></label>
-                    {{form.department}}
+                    {{form.department_select}}
                     <label for="subject" class="text-lg text-slate-700">Subject <span
                             class="text-red-600">*</span></label>
                     {{form.subject}}
@@ -66,5 +72,8 @@ Question bank
     <div></div>
 </main>
 
+{% block js %}
+{% include "js2.html" %}
+{% endblock %}
 
 {% endblock %}

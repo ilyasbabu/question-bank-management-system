@@ -12,19 +12,33 @@ def feedback(request):
     return render(request, 'feedback.html')
 def qverify(request):
     return render(request,'q_verify_prompt.html')
+# def addquestion(request):
+#     form=QForm(request.POST)
+#     if request.method=='POST':
+#         ques=request.POST.get('ques')
+#         answer=request.POST.get('answer')
+#         university=request.POST.get('university')
+#         department=request.POST.get('department')
+#         subject=request.POST.get('subject')
+#         year=request.POST.get('year')
+#         que=questionanswer(ques=ques,answer=answer,university_id=university,department_id=department,subject_id=subject,year=year)
+#         que.save()
+#         return redirect('/qverify')
+#     return render(request, 'addQ.html',{"form":form})
 def addquestion(request):
-    form=QForm(request.POST)
     if request.method=='POST':
-        ques=request.POST.get('ques')
-        answer=request.POST.get('answer')
-        university=request.POST.get('university')
-        department=request.POST.get('department')
-        subject=request.POST.get('subject')
-        year=request.POST.get('year')
-        que=questionanswer(ques=ques,answer=answer,university_id=university,department_id=department,subject_id=subject,year=year)
-        que.save()
-        return redirect('/qverify')
-    return render(request, 'addQ.html',{"form":form})
+        form=QForm(data=request.POST)
+
+        if form.is_valid():
+            ddata=form.cleaned_data.get
+            department_selected=department.objects.filter(name=ddata('department_select'))
+            reg1=subject(department_id=department_selected[0].id,subject=ddata('subject'))
+            reg1.save()
+        else:
+            print('invalid')
+    else:
+        form=QForm()
+    return render(request,'addQ.html',{'form':form})
 #remove on production
 def temp(request):
     return render(request, 'tempo.html')

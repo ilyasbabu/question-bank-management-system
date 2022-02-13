@@ -1,0 +1,41 @@
+{% block js %}
+<script language="javascript">
+    $('#id_university_select').change(function() {populateCar(this)});
+    // $('#id_subject').addClass('subjects');
+
+    departments= {{ form.departments | safe }}
+    universitys= {{ form.universitys | safe }};
+    populateBrand();
+    $("#id_department_select").empty();
+    $("#id_department_select").append('<option value="" disabled selected>First select a university</option>');
+
+
+    function populateBrand() {
+        $('#id_university_select').empty();
+        $("#id_university_select").append('<option value="" disabled selected>Select your option</option>');
+        $.each(universitys, function(v) {
+            $('#id_university_select')
+                .append($("<option></option>")
+                .attr("value", universitys[v])
+                .text(universitys[v]));
+        });
+    }
+
+    function populateCar(event) {
+        universitys = $("#id_university_select option:selected").text();
+        $("#id_department_select").empty();
+        $("#id_department_select").append('<option value="" disabled selected>Select your option</option>');
+        for (let [b, bdepartments] of Object.entries(departments)) {
+            if (b == universitys) {
+                //alert(b);
+                for (department in bdepartments) {
+                    $('#id_department_select')
+                        .append($("<option></option>")
+                            .attr("value", bdepartments[department])
+                            .text(bdepartments[department]));
+                }
+            }
+        }
+    }
+</script>
+{% endblock %}
