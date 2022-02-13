@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Question bank
+{% endblock title %}
+{% block content %}
+
+
+
+<main class="min-h-screen">
+    <div class="pt-44 lg:pt-28 pb-8 flex ">
+        <div class="w-full ">
+            <div>
+                <h1 class="text-2xl mx-10 lg:mx-44 mb-4 text-slate-700">Add Questions</h1>
+            </div>
+            <div class="mx-12 lg:mx-56">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <label for="question" class="text-lg text-slate-700">Question <span
+                            class="text-red-600">*</span></label>
+                    {{form.ques}}
+                    <label for="answer" class="text-lg text-slate-700">Answer <span
+                            class="text-red-600">*</span></label>
+                    {{form.answer}}
+                    <label for="university" class="text-lg text-slate-700">University <span
+                            class="text-red-600">*</span></label>
+                    {{form.university}}
+                    <label for="department" class="text-lg text-slate-700">Department <span
+                            class="text-red-600">*</span></label>
+                    {{form.department}}
+                    <label for="subject" class="text-lg text-slate-700">Subject <span
+                            class="text-red-600">*</span></label>
+                    {{form.subject}}
+                    <div class="lg:flex justify-between">
+                        <div class="mr-5 w-full">
+                            <label for="year" class="text-lg text-slate-700">Year <span
+                                    class="text-red-600">*</span></label>
+                            {{form.year}}
+                        </div>
+                        <div class=" mb-2 w-full">
+                            <label for="question" class="text-lg text-slate-700">Times asked </label>
+                            <input type="number" name="question" id="question" placeholder="  How many times asked"
+                                class="block rounded border-slate-700 border px-2 w-full h-12">
+                        </div>
+                    </div>
+
+                    <label for="comment" class="text-lg text-slate-700">Comment</label>
+                    <input type="text" name="comment" id="comment" placeholder="  any comment regarding the question"
+                        class="block rounded border-slate-700 border px-2 w-full h-12 mb-2">
+
+
+
+                    <input type="checkbox" name="important" id="">
+                    <label for="important">This question important</label><br>
+                    <input type="checkbox" name="terms" id="terms" required> I Agree this question was asked on
+                    mentioned date <br><br>
+                    <input type="submit" value="Submit" id="submit"
+                        class="text-white lg:w-2/5 w-36 h-10 bg-slate-700 rounded">
+                    <input type="reset" class="text-white w-36 lg:w-2/5 h-10 bg-slate-700 rounded">
+                </form>
+            </div>
+        </div>
+        <div></div>
+    </div>
+    <div></div>
+</main>
+
+
+{% endblock %}
