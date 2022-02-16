@@ -12,30 +12,27 @@ def feedback(request):
     return render(request, 'feedback.html')
 def qverify(request):
     return render(request,'q_verify_prompt.html')
-# def addquestion(request):
-#     form=QForm(request.POST)
-#     if request.method=='POST':
-#         ques=request.POST.get('ques')
-#         answer=request.POST.get('answer')
-#         university=request.POST.get('university')
-#         department=request.POST.get('department')
-#         subject=request.POST.get('subject')
-#         year=request.POST.get('year')
-#         que=questionanswer(ques=ques,answer=answer,university_id=university,department_id=department,subject_id=subject,year=year)
-#         que.save()
-#         return redirect('/qverify')
-#     return render(request, 'addQ.html',{"form":form})
 def addquestion(request):
+    form=QForm(request.POST)
     if request.method=='POST':
-        form=QForm(data=request.POST)
-
-        if form.is_valid():
-            ddata=form.cleaned_data.get
-            department_selected=department.objects.filter(name=ddata('department_select'))
-            reg1=subject(department_id=department_selected[0].id,subject=ddata('subject'))
-            reg1.save()
+        usr=request.user.username
+        ques=request.POST.get('ques')
+        answer=request.POST.get('answer')
+        username=usr
+        university=request.POST.get('university_select')
+        department_select=request.POST.get('department_select')
+        subject=request.POST.get('subject')
+        year=request.POST.get('year')
+        timesAsked=request.POST.get('timesAsked')
+        comment=request.POST.get('comment')
+        imp=request.POST.get('important')
+        if imp=='on':
+            important=True
         else:
-            print('invalid')
+            important=False
+        que=questionanswer(ques=ques,answer=answer,username=username,university_select_id=university,department_id=department_select,subject_id=subject,year=year,comment=comment,timesAsked=timesAsked,important=important)
+        que.save()
+        return redirect('/qverify')
     else:
         form=QForm()
     return render(request,'addQ.html',{'form':form})

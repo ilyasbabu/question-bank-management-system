@@ -45,20 +45,17 @@ Question bank
                             {{form.year}}
                         </div>
                         <div class=" mb-2 w-full">
-                            <label for="question" class="text-lg text-slate-700">Times asked </label>
-                            <input type="number" name="question" id="question" placeholder="  How many times asked"
-                                class="block rounded border-slate-700 border px-2 w-full h-12">
+                            <label for="timesAsked" class="text-lg text-slate-700">Times asked(optional) </label>
+                            {{form.timesAsked}}
                         </div>
                     </div>
 
-                    <label for="comment" class="text-lg text-slate-700">Comment</label>
-                    <input type="text" name="comment" id="comment" placeholder="  any comment regarding the question"
-                        class="block rounded border-slate-700 border px-2 w-full h-12 mb-2">
+                    <label for="comment" class="text-lg text-slate-700">Comments</label>
+                    {{form.comment}}
 
 
-
-                    <input type="checkbox" name="important" id="">
-                    <label for="important">This question important</label><br>
+                    {{form.important}}
+                    <label for="id_important">This question important</label><br>
                     <input type="checkbox" name="terms" id="terms" required> I Agree this question was asked on
                     mentioned date <br><br>
                     <input type="submit" value="Submit" id="submit"

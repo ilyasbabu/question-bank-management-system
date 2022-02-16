@@ -5,4 +5,7 @@ from .models import *
 admin.site.register(university)
 admin.site.register(department)
 admin.site.register(subject)
-admin.site.register(questionanswer)
+class quesAdmin(admin.ModelAdmin):
+    list_display=['__str__','subject','username','show']
+    list_editable=['show']
+admin.site.register(questionanswer,quesAdmin)

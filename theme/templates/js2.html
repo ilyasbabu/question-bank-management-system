@@ -4,7 +4,9 @@
     // $('#id_subject').addClass('subjects');
 
     departments= {{ form.departments | safe }}
-    universitys= {{ form.universitys | safe }};
+    universitys= {{ form.universitys | safe }}
+    universitysid={{ form.universitysid | safe }}
+    departmentsid={{ form.deptid | safe }};
     populateBrand();
     $("#id_department_select").empty();
     $("#id_department_select").append('<option value="" disabled selected>First select a university</option>');
@@ -16,7 +18,7 @@
         $.each(universitys, function(v) {
             $('#id_university_select')
                 .append($("<option></option>")
-                .attr("value", universitys[v])
+                .attr("value", universitysid[v])
                 .text(universitys[v]));
         });
     }
@@ -25,14 +27,16 @@
         universitys = $("#id_university_select option:selected").text();
         $("#id_department_select").empty();
         $("#id_department_select").append('<option value="" disabled selected>Select your option</option>');
-        for (let [b, bdepartments] of Object.entries(departments)) {
+        for (let [b, bdepartments] of Object.entries(departmentsid)) {
             if (b == universitys) {
                 //alert(b);
+
                 for (department in bdepartments) {
+                    
                     $('#id_department_select')
                         .append($("<option></option>")
                             .attr("value", bdepartments[department])
-                            .text(bdepartments[department]));
+                            .text(departments[b][department]));
                 }
             }
         }

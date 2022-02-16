@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'tailwind',
     'theme',
     'mainapp',
-    'testapp'
 ]
 
 INTERNAL_IPS = [
