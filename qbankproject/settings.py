@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'tailwind',
     'theme',
     'mainapp',
+    'crispy_forms',
 ]
 
 INTERNAL_IPS = [

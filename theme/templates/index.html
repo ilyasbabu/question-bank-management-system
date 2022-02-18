@@ -16,12 +16,6 @@ Question bank
                 </h1>
             </div>
         </div>
-        <!-- <div class="flex pt-3">
-            <div class="mr-2 hover:border-b"><a href=""><img title="question and answer view" class="w-6 lg:w-8 "
-                        src="{% static 'media/qa.png' %}" alt=""></a></div>
-            <div class="mr-2 hover:border-b"><a href=""><img title="question only view" class="w-6 lg:w-8 "
-                        src="{% static 'media/q.png' %}" alt=""></a></div>
-        </div> -->
     </div>
 
 
@@ -32,14 +26,18 @@ Question bank
                 <select name="university" id="university" required
                     class="px-4 form-select mySelect block outline-none cursor-pointer border-0 rounded-t-md font-semibold text-sm bg-gray-100 w-full h-12">
                     <option class="text-xl" value="" selected="selected">University</option>
-                    <option class="text-xl" value="computer_science">Calicut university</option>
+                    {% for i in un %}
+                    <option class="text-xl" value="computer_science">{{i.university_name}}</option>
+                    {% endfor %}
                 </select>
             </div>
             <div class="hover:bg-slate-200 rounded-t-md">
                 <select name="department" id="department" required
                     class="px-4 form-select mySelect block outline-none cursor-pointer border-0 font-semibold text-sm bg-gray-100 w-full h-12">
                     <option class="text-xl" value="" selected="selected">Department</option>
-                    <option class="text-xl" value="computer_science">Bsc. computer science</option>
+                    {% for i in de %}
+                    <option class="text-xl" value="computer_science">{{i.name}}</option>
+                    {% endfor %}
                 </select>
             </div>
             <div class="hover:bg-slate-200 rounded-t-md">
@@ -58,7 +56,9 @@ Question bank
                 <select name="subject" id="subject" required
                     class="px-4 form-select mySelect block outline-none cursor-pointer border-0 font-semibold text-sm bg-gray-100 w-full h-12">
                     <option class="text-xl" value="" selected="selected">Subject</option>
-                    <option class="text-xl" value="computer_science">sub#1</option>
+                    {% for i in su %}
+                    <option class="text-xl" value="computer_science">{{i.subject}}</option>
+                    {% endfor %}
                 </select>
             </div>
             <div class="flex gap-1 md:justify-end ">
@@ -75,17 +75,6 @@ Question bank
             <div class="py-2">
                 <h4>(no of results) results</h4>
             </div>
-            <!-- sort -->
-            <!-- <div class="border-2 hover:shadow-lg h-9 w-64 rounded flex relative ">
-                <span class="p-1 ml-3 font-medium z-10">
-                    <p>Sort by</p>
-                </span>
-                <select name="" id="" class="absolute left-7 py-1 px-20 -ml-7 form-select border-none rounded">
-                    <option value="recent" class="text-sm">Most Recent</option>
-                    <option value="asked" class="text-sm">Most Asked</option>
-                    <option value="important" class="text-sm ">Important</option>
-                </select>
-            </div> -->
             <div class=" rounded-md flex">
                 <p class="py-2 pl-1 font-medium">Sort by</p>
                 <form action="" method="post">

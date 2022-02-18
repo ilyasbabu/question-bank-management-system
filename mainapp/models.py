@@ -30,6 +30,7 @@ class questionanswer(models.Model):
     university_select = models.ForeignKey(university, on_delete=models.CASCADE)
     department = models.ForeignKey(department, on_delete=models.CASCADE)
     subject = models.ForeignKey(subject, on_delete=models.CASCADE)
+    semester=models.CharField(max_length=25)
     year=models.IntegerField()
     show=models.BooleanField(default=False)
     timesAsked=models.CharField(max_length=2,blank=True,null=True)

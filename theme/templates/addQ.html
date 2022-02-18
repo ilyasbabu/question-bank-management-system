@@ -38,6 +38,9 @@ Question bank
                     <label for="subject" class="text-lg text-slate-700">Subject <span
                             class="text-red-600">*</span></label>
                     {{form.subject}}
+                    <label for="semester" class="text-lg text-slate-700">Semester <span
+                            class="text-red-600">*</span></label>
+                    {{form.semester}}
                     <div class="lg:flex justify-between">
                         <div class="mr-5 w-full">
                             <label for="year" class="text-lg text-slate-700">Year <span
@@ -58,6 +61,9 @@ Question bank
                     <label for="id_important">This question important</label><br>
                     <input type="checkbox" name="terms" id="terms" required> I Agree this question was asked on
                     mentioned date <br><br>
+                    {% for error in form.errors %}
+                    <p style="color: red">{{ error }}</p>
+                    {% endfor %}
                     <input type="submit" value="Submit" id="submit"
                         class="text-white lg:w-2/5 w-36 h-10 bg-slate-700 rounded">
                     <input type="reset" class="text-white w-36 lg:w-2/5 h-10 bg-slate-700 rounded">

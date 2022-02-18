@@ -5,7 +5,12 @@ from .form import QForm
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    questions=questionanswer.objects.all()
+    univ=university.objects.all()
+    dept=department.objects.all()
+    subj=subject.objects.all()
+
+    return render(request, 'index.html',{'qu':questions,'un':univ,'de':dept,'su':subj})
 def about(request):
     return render(request, 'about.html')
 def feedback(request):
@@ -22,6 +27,7 @@ def addquestion(request):
         university=request.POST.get('university_select')
         department_select=request.POST.get('department_select')
         subject=request.POST.get('subject')
+        semester=request.POST.get('semester')
         year=request.POST.get('year')
         timesAsked=request.POST.get('timesAsked')
         comment=request.POST.get('comment')
@@ -30,7 +36,7 @@ def addquestion(request):
             important=True
         else:
             important=False
-        que=questionanswer(ques=ques,answer=answer,username=username,university_select_id=university,department_id=department_select,subject_id=subject,year=year,comment=comment,timesAsked=timesAsked,important=important)
+        que=questionanswer(ques=ques,answer=answer,username=username,university_select_id=university,department_id=department_select,subject_id=subject,year=year,comment=comment,semester=semester,timesAsked=timesAsked,important=important)
         que.save()
         return redirect('/qverify')
     else:
