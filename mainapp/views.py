@@ -2,7 +2,6 @@ from django.shortcuts import redirect, render
 from .models import *
 from .form import QForm
 
-
 # Create your views here.
 def index(request):
     questions=questionanswer.objects.all()

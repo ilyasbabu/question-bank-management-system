@@ -2,7 +2,7 @@
 {% load static %}
 {% block head %}
 {% endblock %}
-
+Add question
 {% block title %}
 Question bank
 {% endblock title %}
@@ -11,9 +11,6 @@ Question bank
 <link href="{% static 'css/base.css' %}" rel="stylesheet">
 {% endblock style %}
 {% block content %}
-
-
-
 <main class="min-h-screen">
     <div class="pt-44 lg:pt-28 pb-8 flex ">
         <div class="w-full ">
@@ -52,11 +49,8 @@ Question bank
                             {{form.timesAsked}}
                         </div>
                     </div>
-
                     <label for="comment" class="text-lg text-slate-700">Comments</label>
                     {{form.comment}}
-
-
                     {{form.important}}
                     <label for="id_important">This question important</label><br>
                     <input type="checkbox" name="terms" id="terms" required> I Agree this question was asked on
@@ -74,9 +68,7 @@ Question bank
     </div>
     <div></div>
 </main>
-
 {% block js %}
 {% include "js2.html" %}
 {% endblock %}
-
 {% endblock %}
