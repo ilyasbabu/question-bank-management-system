@@ -72,19 +72,21 @@ Question bank
     <!-- end of primary dropdowns -->
     <div class="md:flex md:justify-between">
         <div class="mb-5">
-            <div class="py-2">
-                <h4>(no of results) results</h4>
+            <div class="py-2">{% for i in qu %}
+                <h4>{% if forloop.last %}{{ forloop.counter}} results{% endif %} </h4>
+                {% endfor %}
             </div>
             <div class=" rounded-md flex">
                 <p class="py-2 pl-1 font-medium">Sort by</p>
                 <form action="" method="post">
-                <select name="" id="" class=" border-none">
-                    <option value="recent" class="text-sm">Most Recent</option>
-                    <option value="asked" class="text-sm">Most Asked</option>
-                    <option value="important" class="text-sm ">Important</option>
-                </select>
-                <input type="submit" value="Apply" class="bg-slate-500 hover:bg-slate-700 text-white p-2 rounded transition ease-in-out duration-300 cursor-pointer">
-            </form>
+                    <select name="" id="" class=" border-none">
+                        <option value="recent" class="text-sm">Most Recent</option>
+                        <option value="asked" class="text-sm">Most Asked</option>
+                        <option value="important" class="text-sm ">Important</option>
+                    </select>
+                    <input type="submit" value="Apply"
+                        class="bg-slate-500 hover:bg-slate-700 text-white p-2 rounded transition ease-in-out duration-300 cursor-pointer">
+                </form>
             </div>
         </div>
         <div class="md:mt-9">
@@ -113,38 +115,18 @@ Question bank
     </div>
     <!-- sort ends -->
     <!-- question answers -->
+    {% for i in qu %}
     <div class="w-full bg-slate-200 px-9 py-4 my-5 md:hover:bg-slate-300 transition ease-in-out duration-500"
         title="Click on the question to view the answer">
         <details class="list-none cursor-pointer ">
             <summary class="list-none mb-2 ">
-                <span class="font-medium">1.</span> Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Sunt, repudiandae. <span class="font-medium">(march 2019)</span>
+                <span class="font-medium">{{forloop.counter}}.</span>{{i.ques}}. <span class="font-medium">({{i.year}})</span>
             </summary>
-            <p><span class="font-medium">A.</span> Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Pariatur deleniti, nihil in nesciunt
-                fuga impedit assumenda earum nulla quod reiciendis officia itaque mollitia ut rerum natus
-                voluptate hic numquam, suscipit minus commodi adipisci aliquam perspiciatis fugit. Quibusdam
-                nostrum quas dolore voluptates? Ratione reiciendis fugiat est explicabo commodi. Beatae, error
-                fugit.</p>
+            <p><span class="font-medium">A.</span> {{i.answer}}.</p>
+            <div class="flex items-end justify-end object-right"><a href="/" class="text-right text-blue-700 hover:font-semibold hover:text-blue-500" title="click to see more details about this question" >More Details</a></div>
         </details>
     </div>
-    <!-- end of question answers -->
-    <!-- question answers -->
-    <div class="w-full bg-slate-200 px-9 py-4 my-5 md:hover:bg-slate-300 transition ease-in-out duration-500"
-        title="Click on the question to view the answer">
-        <details class="list-none cursor-pointer ">
-            <summary class="list-none mb-2 ">
-                <span class="font-medium ">2.</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi cum
-                nulla tempora nihil incidunt eveniet vero, consequuntur officiis ducimus sunt, quae porro repellendus
-                tempore commodi quam velit accusamus ratione veritatis? <span class="font-medium">(april 2022)</span>
-            </summary>
-            <p><span class="font-medium">A.</span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil neque
-                laborum magni, magnam maxime unde accusamus qui, atque ut sunt facilis. Enim, adipisci distinctio
-                accusamus quis tempore iure odio ut obcaecati nostrum eveniet quibusdam est repellendus ipsam eligendi
-                iste ipsum voluptatem incidunt culpa aspernatur ad sunt mollitia! Animi a quibusdam earum nihil
-                distinctio, velit impedit, vel eveniet dolores nostrum et.</p>
-        </details>
-    </div>
+    {% endfor %}
     <!-- end of question answers -->
 </main>
 {% endblock %}

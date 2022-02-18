@@ -8,7 +8,6 @@ def index(request):
     univ=university.objects.all()
     dept=department.objects.all()
     subj=subject.objects.all()
-
     return render(request, 'index.html',{'qu':questions,'un':univ,'de':dept,'su':subj})
 def about(request):
     return render(request, 'about.html')
