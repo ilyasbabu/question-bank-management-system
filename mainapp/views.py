@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render
 from .models import *
 from .form import QForm
+from django.db.models import Q
 
 # Create your views here.
 def index(request):
@@ -40,6 +41,13 @@ def addquestion(request):
     else:
         form=QForm()
     return render(request,'addQ.html',{'form':form})
+def search(request):
+    query=None
+    qustions=None
+    if 'q' in request.GET:
+        query=request.GET.get('q')
+        qustions=questionanswer.objects.all().filter(Q(ques__contains=query)|Q(answer__contains=query)|Q(subject__subject__contains=query))
+    return render(request, 'index.html',{'query':query,'qu':qustions})
 #remove on production
 def temp(request):
     return render(request, 'tempo.html')

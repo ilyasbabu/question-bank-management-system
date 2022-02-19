@@ -26,4 +26,5 @@ urlpatterns = [
     path('addquestion/', views.addquestion, name='addquestion'),
     path('temp/', views.temp, name='temp'),
     path('qverify/',views.qverify,name='qverify'),
+    path('search/',views.search,name='search'),
 ]
