@@ -697,10 +697,6 @@ select {
   z-index: 30;
 }
 
-.float-right {
-  float: right;
-}
-
 .m-0 {
   margin: 0px;
 }
@@ -853,6 +849,10 @@ select {
 
 .min-h-screen {
   min-height: 100vh;
+}
+
+.min-h-full {
+  min-height: 100%;
 }
 
 .w-auto {
@@ -1170,6 +1170,11 @@ select {
      object-position: right;
 }
 
+.object-center {
+  -o-object-position: center;
+     object-position: center;
+}
+
 .p-5 {
   padding: 1.25rem;
 }
@@ -1252,6 +1257,16 @@ select {
   padding-right: 1.25rem;
 }
 
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.py-24 {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
 .pt-56 {
   padding-top: 14rem;
 }
@@ -1300,6 +1315,10 @@ select {
   padding-bottom: 0.75rem;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .text-right {
   text-align: right;
 }
@@ -1346,6 +1365,11 @@ select {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
 }
 
 .font-semibold {
@@ -1492,6 +1516,11 @@ select {
   color: rgb(30 64 175 / var(--tw-text-opacity));
 }
 
+.text-slate-800 {
+  --tw-text-opacity: 1;
+  color: rgb(30 41 59 / var(--tw-text-opacity));
+}
+
 .underline {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
@@ -1564,16 +1593,8 @@ select {
   transition-duration: 150ms;
 }
 
-.duration-1000 {
-  transition-duration: 1000ms;
-}
-
 .ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.ease-in {
-  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 
 .hover\:-translate-y-3:hover {
@@ -1655,10 +1676,6 @@ select {
 
 .hover\:to-yellow-500:hover {
   --tw-gradient-to: #eab308;
-}
-
-.hover\:font-bold:hover {
-  font-weight: 700;
 }
 
 .hover\:font-semibold:hover {
@@ -1755,6 +1772,25 @@ select {
 
   .sm\:ml-0 {
     margin-left: 0px;
+  }
+
+  .sm\:min-h-screen {
+    min-height: 100vh;
+  }
+
+  .sm\:py-56 {
+    padding-top: 14rem;
+    padding-bottom: 14rem;
+  }
+
+  .sm\:py-5 {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .sm\:py-40 {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
   }
 }
 
