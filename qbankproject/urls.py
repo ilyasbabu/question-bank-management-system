@@ -27,4 +27,5 @@ urlpatterns = [
     path('temp/', views.temp, name='temp'),
     path('qverify/',views.qverify,name='qverify'),
     path('search/',views.search,name='search'),
+    path('detail/<int:id>',views.detail,name='detail'),
 ]

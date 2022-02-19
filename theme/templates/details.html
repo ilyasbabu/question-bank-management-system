@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Question bank
+{% endblock title %}
+
+{% block style %}
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        padding: 15px;
+    }
+</style>
+{% endblock style %}
+
+{% block content %}
+
+
+<div class="py-40 px-12">
+    <table class="">
+        <tr>
+            <th>Question</th>
+            <td>{{qu.ques}}</td>
+        </tr>
+        <tr>
+            <th>Answer</th>
+            <td>{{qu.answer}}</td>
+        </tr>
+        <tr>
+            <th>University</th>
+            <td>{{qu.university_select}}</td>
+        </tr>
+        <tr>
+            <th>Department</th>
+            <td>{{qu.department}}</td>
+        </tr>
+        <tr>
+            <th>Subject</th>
+            <td>{{qu.subject}}</td>
+        </tr>
+        <tr>
+            <th>Semester</th>
+            <td>{{qu.semester}}</td>
+        </tr>
+        <tr>
+            <th>Year</th>
+            <td>{{qu.year}}</td>
+        </tr>
+        <tr>
+            <th>Times asked</th>
+            <td>{{qu.timesAsked}}</td>
+        </tr>
+        <tr>
+            <th>Added by</th>
+            <td>{{qu.username}}</td>
+        </tr>
+    </table>
+    <div class="py-2 pl-2">
+        <a href="/" class="text-blue-700 underline font-medium">Return to homepage</a>
+    </div>
+</div>
+
+
+
+{% endblock content %}

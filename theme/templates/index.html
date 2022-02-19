@@ -124,7 +124,7 @@ Question bank
                 <span class="font-medium">{{forloop.counter}}.</span>{{i.ques}}. <span class="font-medium">({{i.year}})</span>
             </summary>
             <p><span class="font-medium">A.</span> {{i.answer}}.</p>
-            <div class="flex items-end justify-end object-right"><a href="/" class="text-right text-blue-700 hover:font-semibold hover:text-blue-500" title="click to see more details about this question" >More Details</a></div>
+            <div class="flex items-end justify-end object-right"><a href="/detail/{{i.id}}" class="text-right text-blue-700 hover:font-semibold hover:text-blue-500" title="click to see more details about this question" >More Details</a></div>
         </details>
     </div>
     {% endfor %}

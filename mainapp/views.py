@@ -46,8 +46,11 @@ def search(request):
     qustions=None
     if 'q' in request.GET:
         query=request.GET.get('q')
-        qustions=questionanswer.objects.all().filter(Q(ques__contains=query)|Q(answer__contains=query)|Q(subject__subject__contains=query))
+        qustions=questionanswer.objects.all().filter(Q(ques__icontains=query)|Q(answer__icontains=query)|Q(subject__subject__icontains=query))
     return render(request, 'index.html',{'query':query,'qu':qustions})
 #remove on production
 def temp(request):
     return render(request, 'tempo.html')
+def detail(request,id):
+    question=questionanswer.objects.get(id=id)
+    return render(request,'details.html',{'qu':question})
