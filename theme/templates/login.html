@@ -1,48 +1,50 @@
 {% extends 'base.html' %}
 {% block title %}
-		temperory
-		{% endblock title %}
-    {% block content %}
-    <div class="flex justify-center ">
-        <div class="shadow-2xl h-screen lg:w-1/2 w-full drop-shadow-xl flex justify-center items-center">
-            <div>
+temperory
+{% endblock title %}
+{% block content %}
+<div class="flex justify-center ">
+    <div class="shadow-2xl h-screen lg:w-1/2 w-full drop-shadow-xl flex justify-center items-center">
+        <div>
 
-                <form>
+            <form action="." method="post">
+                {% csrf_token %}
+                <div>
+                    <span class="text-sm text-slate-700">Welcome back</span>
+                    <h1 class="text-2xl text-slate-600 font-bold">Login to your account</h1>
+                </div>
+                <div class="my-3">
+                    <label class="block text-md mb-2 text-slate-700" for="username">Username</label>
+                    <input class="px-4 w-full border-2 py-2 rounded-md text-sm outline-none" type="text" name="username"
+                        placeholder="joe">
+                </div>
+                <div class="mt-5">
+                    <label class="block text-md mb-2 text-slate-700" for="password">Password</label>
+                    <input class="px-4 w-full border-2 py-2 rounded-md text-sm outline-none" type="password"
+                        name="password" placeholder="**********">
+                </div>
+
+                <div class="flex justify-between">
                     <div>
-                        <span class="text-sm text-slate-700">Welcome back</span>
-                        <h1 class="text-2xl text-slate-600 font-bold">Login to your account</h1>
+                        <input class="cursor-pointer" type="radio" name="rememberme">
+                        <span class="text-sm text-slate-700">Remember Me</span>
                     </div>
-                    <div class="my-3">
-                        <label class="block text-md mb-2 text-slate-700" for="email">Email</label>
-                        <input class="px-4 w-full border-2 py-2 rounded-md text-sm outline-none" type="email"
-                            name="password" placeholder="yourname@email.com">
-                    </div>
-                    <div class="mt-5">
-                        <label class="block text-md mb-2 text-slate-700" for="password">Password</label>
-                        <input class="px-4 w-full border-2 py-2 rounded-md text-sm outline-none" type="password"
-                            name="password" placeholder="**********">
-                    </div>
+                    <span class="text-sm text-blue-700 hover:underline cursor-pointer">Forgot password?</span>
+                </div>
+                <div class="">
+                    <button type="submit"
+                        class="mt-4 mb-3 w-full bg-slate-500 hover:bg-green-400 text-white py-2 rounded-md transition duration-100">Login
+                        now</button>
+                    {% for i in messages %}
+                    <h4 class="text-red-600">{{ i }}</h4>
+                    {% endfor %}
 
-                    <div class="flex justify-between">
-                        <div>
-                            <input class="cursor-pointer" type="radio" name="rememberme">
-                            <span class="text-sm text-slate-700">Remember Me</span>
-                        </div>
-                        <span class="text-sm text-blue-700 hover:underline cursor-pointer">Forgot password?</span>
-                    </div>
-                    <div class="">
-                        <button
-                            class="mt-4 mb-3 w-full bg-slate-500 hover:bg-green-400 text-white py-2 rounded-md transition duration-100">Login
-                            now</button>
-
-                    </div>
-                </form>
-                <p class="mt-4 text-slate-700"> Dont have an account? <span
-                        class="cursor-pointer text-sm text-blue-600"> <a href="signup.html"> Create account!</a></span></p>
-            </div>
+                </div>
+            </form>
+            <p class="mt-4 text-slate-700"> Dont have an account? <span class="cursor-pointer text-sm text-blue-600"> <a
+                        href="/create_acc"> Create account!</a></span></p>
         </div>
     </div>
-    </div>
-    </div>
-    {% endblock %}
+</div>
 
+{% endblock %}

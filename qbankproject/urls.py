@@ -32,4 +32,7 @@ urlpatterns = [
     path('feedget/',views.feedget,name='feedget'),
     path('category/',views.category,name='category'),
     path('sort/',views.sort,name='sort'),
+    path('login/',views.login,name='login'),
+    path('logout/',views.logout,name='logout'),
+    path('create_acc/',views.create_acc,name='create_acc')
 ]

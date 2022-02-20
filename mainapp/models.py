@@ -1,6 +1,7 @@
-from email import message
-from urllib import request
 from django.db import models
+from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 # Create your models here.
 class university(models.Model):
@@ -46,3 +47,13 @@ class feedback_m(models.Model):
     message=models.TextField()
     def __str__(self):
         return self.message[13:30]
+
+class Profile(models.Model):
+    username = models.CharField(max_length=100)
+    university=models.CharField(max_length=100)
+    designation=models.CharField(max_length=100)
+    college=models.CharField(max_length=100)
+    phone=models.CharField(max_length=15)
+    def __str__(self):
+        return self.username
+
