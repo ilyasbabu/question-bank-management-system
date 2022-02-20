@@ -21,13 +21,13 @@ Question bank
 
     <!-- start of primary dropdowns -->
     <div class="rounded shadow-xl mb-10 mt-5 bg-gray-100">
-        <form action="" method="">
+        <form action="/category/" method="get">
             <div class="hover:bg-slate-200 rounded-t-md">
                 <select name="university" id="university" required
                     class="px-4 form-select mySelect block outline-none cursor-pointer border-0 rounded-t-md font-semibold text-sm bg-gray-100 w-full h-12">
                     <option class="text-xl" value="" selected="selected">University</option>
                     {% for i in un %}
-                    <option class="text-xl" value="computer_science">{{i.university_name}}</option>
+                    <option class="text-xl" value="{{i.id}}">{{i.university_name}}</option>
                     {% endfor %}
                 </select>
             </div>
@@ -36,7 +36,7 @@ Question bank
                     class="px-4 form-select mySelect block outline-none cursor-pointer border-0 font-semibold text-sm bg-gray-100 w-full h-12">
                     <option class="text-xl" value="" selected="selected">Department</option>
                     {% for i in de %}
-                    <option class="text-xl" value="computer_science">{{i.name}}</option>
+                    <option class="text-xl" value="{{i.id}}">{{i.name}}</option>
                     {% endfor %}
                 </select>
             </div>
@@ -44,12 +44,12 @@ Question bank
                 <select name="semester" id="semester" required
                     class="px-4 form-select mySelect block outline-none cursor-pointer border-0 font-semibold text-sm bg-gray-100 w-full h-12">
                     <option class="text-xl" value="" selected="selected">Semester</option>
-                    <option class="text-xl" value="computer_science">1st semester</option>
-                    <option class="text-xl" value="computer_science">2nd semester</option>
-                    <option class="text-xl" value="computer_science">3rd semester</option>
-                    <option class="text-xl" value="computer_science">4th semester</option>
-                    <option class="text-xl" value="computer_science">5th semester</option>
-                    <option class="text-xl" value="computer_science">6th semester</option>
+                    <option class="text-xl" value="s1">1st semester</option>
+                    <option class="text-xl" value="s2">2nd semester</option>
+                    <option class="text-xl" value="s3">3rd semester</option>
+                    <option class="text-xl" value="s4">4th semester</option>
+                    <option class="text-xl" value="s5">5th semester</option>
+                    <option class="text-xl" value="s6">6th semester</option>
                 </select>
             </div>
             <div class="hover:bg-slate-200 rounded-t-md">
@@ -57,15 +57,15 @@ Question bank
                     class="px-4 form-select mySelect block outline-none cursor-pointer border-0 font-semibold text-sm bg-gray-100 w-full h-12">
                     <option class="text-xl" value="" selected="selected">Subject</option>
                     {% for i in su %}
-                    <option class="text-xl" value="computer_science">{{i.subject}}</option>
+                    <option class="text-xl" value="{{i.id}}">{{i.subject}}</option>
                     {% endfor %}
                 </select>
             </div>
             <div class="flex gap-1 md:justify-end ">
                 <input type="submit" value="Submit" id="submit"
                     class="text-white lg:w-1/6 w-1/2 h-10 bg-slate-500 hover:bg-slate-700 cursor-pointer rounded-bl-md md:rounded-none transition duration-150 ease-in-out">
-                <input type="reset"
-                    class="text-white w-1/2 lg:w-1/6 h-10 bg-slate-500 hover:bg-slate-700 cursor-pointer rounded-br-md transition duration-150 ease-in-out">
+                <button type="button" formaction="/"
+                    class="text-white w-1/2 lg:w-1/6 h-10 bg-slate-500 hover:bg-slate-700 cursor-pointer rounded-br-md transition duration-150 ease-in-out"><a href="/" class="w-auto h-full"><div class="h-full flex justify-center items-center">Clear all filters</div></a></button>
             </div>
         </form>
     </div>
@@ -130,7 +130,7 @@ Question bank
     {% endfor %}
     <!-- end of question answers -->
     <div class="grid object-center items-center justify-center py-24 sm:py-40 ">
-        <h4 class="text-4xl text-slate-600">Not found what you are looking for?<br><span class="text-2xl"> Try searching properly</span></h4>
+        <h4 class="text-4xl text-slate-600">Not found what you are looking for?<br><span class="text-xl"> Clear all filters and try searching properly</span></h4>
     </div>
 </main>
 {% endblock %}

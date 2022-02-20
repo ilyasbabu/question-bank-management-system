@@ -66,3 +66,14 @@ def feedget(request):
         feed.save()
         return redirect('/')
     return render(request,'feedback.html')
+def category(request):
+    univ=university.objects.all()
+    dep=department.objects.all()
+    sub=subject.objects.all()
+    if request.method=='GET':
+        uni=request.GET.get('university')
+        dept=request.GET.get('department')
+        subj=request.GET.get('subject')
+        sem=request.GET.get('semester')
+        ques=questionanswer.objects.all().filter(Q(university_select_id=uni)&Q(department_id=dept)&Q(subject_id=subj)&Q(semester=sem))
+    return render(request,'index.html',{'qu':ques,'un':univ,'de':dep,'su':sub})
