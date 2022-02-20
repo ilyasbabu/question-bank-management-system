@@ -78,11 +78,11 @@ Question bank
             </div>
             <div class=" rounded-md flex">
                 <p class="py-2 pl-1 font-medium">Sort by</p>
-                <form action="" method="post">
-                    <select name="" id="" class=" border-none">
+                <form action="/sort/" method="get">
+                    <select name="sort" id="" class=" border-none">
                         <option value="recent" class="text-sm">Most Recent</option>
                         <option value="asked" class="text-sm">Most Asked</option>
-                        <option value="important" class="text-sm ">Important</option>
+                        <option value="important" class="text-sm">Important</option>
                     </select>
                     <input type="submit" value="Apply"
                         class="bg-slate-500 hover:bg-slate-700 text-white p-2 rounded transition ease-in-out duration-300 cursor-pointer">
@@ -130,7 +130,7 @@ Question bank
     {% endfor %}
     <!-- end of question answers -->
     <div class="grid object-center items-center justify-center py-24 sm:py-40 ">
-        <h4 class="text-4xl text-slate-600">Not found what you are looking for?<br><span class="text-xl"> Clear all filters and try searching properly</span></h4>
+        <h4 class="text-4xl text-slate-600">Not found what you are looking for?<br><span class="text-xl"><a href="/" class="text-blue-900 font-semibold underline"> Clear all filters</a> and try searching properly</span></h4>
     </div>
 </main>
 {% endblock %}

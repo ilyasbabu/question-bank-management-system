@@ -31,4 +31,5 @@ urlpatterns = [
     path('qfeedback/<int:id>',views.qfeedback,name='qfeedback'),
     path('feedget/',views.feedget,name='feedget'),
     path('category/',views.category,name='category'),
+    path('sort/',views.sort,name='sort'),
 ]
