@@ -1,3 +1,4 @@
+from email import message
 from urllib import request
 from django.db import models
 
@@ -38,3 +39,10 @@ class questionanswer(models.Model):
     important=models.BooleanField(default=False)
     def __str__(self):
         return self.ques[:30]
+
+class feedback_m(models.Model):
+    name=models.CharField(max_length=50)
+    email=models.EmailField()
+    message=models.TextField()
+    def __str__(self):
+        return self.message[13:30]

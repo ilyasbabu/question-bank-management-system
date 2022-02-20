@@ -1,40 +1,55 @@
 {% extends 'base.html' %}
 {% block title %}
-		Feedback
-		{% endblock title %}
-    {% block content %}
+Feedback
+{% endblock title %}
+{% block content %}
 
-    <div class="flex justify-center ">
-        <div class="shadow-2xl h-screen lg:w-1/2 w-full drop-shadow-xl flex justify-center items-center">
+
+<section class="text-gray-600 body-font relative pt-14 min-h-screen">
+    <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-col text-center w-full mb-8">
+            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-slate-700">Feedback</h1>
+            <p class="lg:w-2/3 mx-auto leading-relaxed text-base text-slate-700">Feel free to write to us.</p>
+        </div>
+        <div class="lg:w-1/2 md:w-2/3 mx-auto">
             <div>
-
-                <form>
-                    <div>
-                        <span class="text-sm text-slate-700"></span>
-                        <h1 class="text-2xl text-slate-600 font-bold">Feedback</h1>
+                <form action="/feedget/" method="post" class="flex flex-wrap -m-2">
+                    {% csrf_token %}
+                    <div class="p-2 w-1/2">
+                        <div class="relative">
+                            <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
+                            <input type="text" id="name" name="name"
+                                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-500 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                                placeholder="Your Name"
+                                required>
+                        </div>
                     </div>
-                    <div class="my-3">
-                        <label class="block text-md mb-2 text-slate-700" for="email">Email</label>
-                        <input class="px-4 w-full border-2 py-2 rounded-md text-sm outline-none" type="email"
-                            name="password" placeholder="yourname@email.com">
+                    <div class="p-2 w-1/2">
+                        <div class="relative">
+                            <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
+                            <input type="email" id="email" name="email"
+                                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-500 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                                placeholder="example@email.com"
+                                required>
+                        </div>
                     </div>
-                    <div class="mt-5">
-                        <label class="block text-md mb-2 text-slate-700" for="password">Feedback</label>
-                        <textarea class="px-4 w-full border-2 py-2 rounded-md text-sm outline-none" rows="4" cols="50" placeholder="your feedback here"></textarea>
+                    <div class="p-2 w-full">
+                        <div class="relative">
+                            <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
+                            <textarea id="message" name="message" required
+                                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-500 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out">{% if qu %}Feedback for question id=[{{qu.id}}]: (write your feedback after this text)
+                                {% endif %}</textarea>
+                        </div>
                     </div>
-
-                    
-                    <div class="">
-                        <button
-                            class="mt-4 mb-3 w-full bg-slate-500 hover:bg-green-400 text-white py-2 rounded-md transition duration-100">Submit</button>
-
+                    <div class="p-2 w-full">
+                        <input type="submit" value="Send"
+                            class="flex mx-auto text-white bg-slate-600 border-0 py-2 px-16 focus:outline-none hover:bg-slate-700 rounded text-lg">
                     </div>
                 </form>
-                
             </div>
         </div>
     </div>
-    </div>
-    </div>
+</section>
 
-    {% endblock %}
+
+{% endblock %}

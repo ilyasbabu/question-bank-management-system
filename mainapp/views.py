@@ -54,3 +54,15 @@ def temp(request):
 def detail(request,id):
     question=questionanswer.objects.get(id=id)
     return render(request,'details.html',{'qu':question})
+def qfeedback(request,id):
+    question=questionanswer.objects.get(id=id)
+    return render(request,'feedback.html',{'qu':question})
+def feedget(request):
+    if request.method=='POST':
+        name=request.POST.get('name')
+        email=request.POST.get('email')
+        message=request.POST.get('message')
+        feed=feedback_m(name=name,email=email,message=message)
+        feed.save()
+        return redirect('/')
+    return render(request,'feedback.html')

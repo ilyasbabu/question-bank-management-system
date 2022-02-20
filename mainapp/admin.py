@@ -9,3 +9,7 @@ class quesAdmin(admin.ModelAdmin):
     list_display=['__str__','subject','username','show']
     list_editable=['show']
 admin.site.register(questionanswer,quesAdmin)
+
+class feedbackAdmin(admin.ModelAdmin):
+    list_display=['__str__','name','email']
+admin.site.register(feedback_m,feedbackAdmin)
