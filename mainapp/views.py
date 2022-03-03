@@ -7,6 +7,12 @@ from django.contrib import messages
 
 
 # Create your views here.
+def home(request):
+    questions=questionanswer.objects.all()
+    univ=university.objects.all()
+    dept=department.objects.all()
+    subj=subject.objects.all()
+    return render(request, 'index.html',{'qu':questions,'un':univ,'de':dept,'su':subj})
 def index(request):
     questions=questionanswer.objects.all()
     univ=university.objects.all()
@@ -97,53 +103,53 @@ def sort(request):
     return render(request,'index.html',{'qu':ques,'un':univ,'de':dep,'su':sub})
 
 
-def create_acc(request):
-    if request.method=='POST':
-        fname=request.POST['fname']
-        laname=request.POST['laname']
-        username=request.POST['username']
-        email=request.POST['email']
-        designation=request.POST['designation']
-        university=request.POST['university']
-        college=request.POST['college']
-        phone=request.POST['phone']
-        password=request.POST['password']
-        password1=request.POST['password1']
-        if password==password1:
-            if User.objects.filter(username=username).exists():
-                messages.info(request,'Username Taken')
-                return redirect('/create_acc')
-            elif User.objects.filter(email=email).exists():
-                messages.info(request,'email already registered')
-                return redirect('/create_acc')
-            else:
-                user=User.objects.create_user(username=username,first_name=fname,last_name=laname,email=email,password=password)
-                user.save()
-                prof=Profile(username=username,designation=designation,university=university,college=college,phone=phone)
-                prof.save()
-                messages.info(request,'User Created')
-        else:
-            print('error in password')
-            messages.info(request,'Password not matching')
-            return redirect('/create_acc')
-    else:
-        return render(request,'signup.html')
-    return render(request,'signup.html')
+# def create_acc(request):
+#     if request.method=='POST':
+#         fname=request.POST['fname']
+#         laname=request.POST['laname']
+#         username=request.POST['username']
+#         email=request.POST['email']
+#         designation=request.POST['designation']
+#         university=request.POST['university']
+#         college=request.POST['college']
+#         phone=request.POST['phone']
+#         password=request.POST['password']
+#         password1=request.POST['password1']
+#         if password==password1:
+#             if User.objects.filter(username=username).exists():
+#                 messages.info(request,'Username Taken')
+#                 return redirect('/create_acc')
+#             elif User.objects.filter(email=email).exists():
+#                 messages.info(request,'email already registered')
+#                 return redirect('/create_acc')
+#             else:
+#                 user=User.objects.create_user(username=username,first_name=fname,last_name=laname,email=email,password=password)
+#                 user.save()
+#                 prof=Profile(username=username,designation=designation,university=university,college=college,phone=phone)
+#                 prof.save()
+#                 messages.info(request,'User Created')
+#         else:
+#             print('error in password')
+#             messages.info(request,'Password not matching')
+#             return redirect('/create_acc')
+#     else:
+#         return render(request,'signup.html')
+#     return render(request,'signup.html')
 
-def login(request):
-    if request.method=='POST':
-        username=request.POST['username']
-        password=request.POST['password']
-        user=auth.authenticate(username=username,password=password)
-        if user is not None:
-            auth.login(request,user)
-            return redirect('/')
-        else:
-            messages.info(request,'Invalid username or password!')
-            return redirect('/login')
-    else:
-        return render(request,'login.html')
+# def login(request):
+#     if request.method=='POST':
+#         username=request.POST['username']
+#         password=request.POST['password']
+#         user=auth.authenticate(username=username,password=password)
+#         if user is not None:
+#             auth.login(request,user)
+#             return redirect('/')
+#         else:
+#             messages.info(request,'Invalid username or password!')
+#             return redirect('/login')
+#     else:
+#         return render(request,'login.html')
 
-def logout(request):
-    auth.logout(request)
-    return redirect('/')
+# def logout(request):
+#     auth.logout(request)
+#     return redirect('/')

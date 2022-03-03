@@ -1,0 +1,74 @@
+{% extends 'base.html'%}
+
+{% block head %}
+
+{% endblock head %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+{% load static %}
+<div class="w-full min-h-screen bg-gray-50 flex flex-col justify-center items-center  sm:pt-0">
+    {% if messages %}
+    {% for mess in messages %}
+    <div class="alert border-green-700 border-2 p-3 bg-green-100  mx-1 alert-{{mess.tags}}" role="alert">
+        {{mess}}
+    </div>
+    {% endfor %}
+    {% endif %}
+    <div class="w-full sm:max-w-md p-5 mx-auto">
+        {% if otp %}
+        <h2 class="mb-12 text-center text-5xl font-extrabold">Login.</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="usr" value="{{usr.username}}">
+            <div class="mb-4">
+                <label class="block mb-1" for="verify">Enter Your OTP</label>
+                <input id="email" type="text" name="otp"
+                    class="py-2 px-3 border border-gray-300 focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-200 focus:ring-opacity-50 rounded-md shadow-sm disabled:bg-gray-100 mt-1 block w-full" />
+            </div>
+            <div class="mt-6">
+                <button type="submit"
+                    class="w-full inline-flex items-center justify-center px-4 py-2 bg-slate-600 border border-transparent rounded-md font-semibold capitalize text-white hover:bg-blue-700 active:bg-blue-700 focus:outline-none focus:border-blue-700 focus:ring focus:ring-blue-200 disabled:opacity-25 transition">Verify</button>
+            </div>
+        </form>
+
+        {% else %}
+        <h2 class="mb-12 text-center text-5xl font-extrabold">Login.</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-4">
+                <label class="block mb-1" for="id_username">Email-Address</label>
+                <input id="id_username" autofocus required type="text" name="username" autocomplete="username"
+                    class="py-2 px-3 border border-gray-300 focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-200 focus:ring-opacity-50 rounded-md shadow-sm disabled:bg-gray-100 mt-1 block w-full" />
+            </div>
+            <div class="mb-4">
+                <label class="block mb-1" for="id_password">Password</label>
+                <input id="id_password" type="password" required autocomplete="current-password" name="password"
+                    class="py-2 px-3 border border-gray-300 focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-200 focus:ring-opacity-50 rounded-md shadow-sm disabled:bg-gray-100 mt-1 block w-full" />
+            </div>
+            <div class="mt-6 flex items-center justify-between">
+                <div class="flex items-center">
+                    <input id="remember_me" type="checkbox"
+                        class="border border-gray-300 text-blue-600 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50" />
+                    <label for="remember_me" class="ml-2 block text-sm leading-5 text-gray-900"> Remember me
+                    </label>
+                </div>
+                <a href="{% url 'password_reset' %}" class="text-sm"> Forgot your password? </a>
+            </div>
+            <div class="mt-6">
+                <button
+                    class="w-full inline-flex items-center justify-center px-4 py-2 bg-slate-600 transition ease-in-out duration-300 hover:bg-slate-700 border border-transparent rounded-md font-semibold capitalize text-white active:bg-green-700 disabled:opacity-25">Log
+                    In</button>
+            </div>
+            <div class="mt-6 text-center">
+                <a href="{% url 'signup' %}" class="underline">Sign up for an account</a>
+            </div>
+
+
+            
+
+        </form>
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}
