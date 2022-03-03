@@ -7,7 +7,6 @@ from .models import UserOTP
 from .models import Profile
 from django.core.mail import send_mail
 from django.conf import settings
-from django.http import HttpResponse
 from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm
 from django.contrib.auth import authenticate, login
 
@@ -50,7 +49,7 @@ def signup(request):
 			UserOTP.objects.create(user = usr, otp = usr_otp)
 			mess = f"Hello {usr.first_name},\nYour OTP is {usr_otp}\nThanks!"
 			send_mail(
-				"Welcome to E-Certificate Generator - Verify Your Email",
+				"Welcome to Question Bank Management System - Verify Your Email",
 				mess,
 				settings.EMAIL_HOST_USER,
 				[usr.email],
@@ -99,7 +98,7 @@ def login_view(request):
 			mess = f"Hello {usr.first_name},\nYour OTP is {usr_otp}\nThanks!"
 
 			send_mail(
-				"Welcome to E-certificate Generator - Verify Your Email",
+				"Welcome to Question Bank Management System - Verify Your Email",
 				mess,
 				settings.EMAIL_HOST_USER,
 				[usr.email],
