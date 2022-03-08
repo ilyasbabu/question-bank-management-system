@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 import os
 from pathlib import Path
 from decouple import config
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -151,3 +152,6 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = config("EMAIL")
 EMAIL_HOST_PASSWORD = config("EMAIL_PASS")
 EMAIL_USE_TLS = True
+
+
+django_heroku.settings(locals())
