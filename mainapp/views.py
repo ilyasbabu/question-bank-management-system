@@ -2,8 +2,7 @@ from django.shortcuts import redirect, render
 from .models import *
 from .form import QForm
 from django.db.models import Q
-from django.contrib.auth.models import User,auth
-from django.contrib import messages
+
 
 
 # Create your views here.
