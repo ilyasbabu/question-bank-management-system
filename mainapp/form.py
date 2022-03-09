@@ -85,12 +85,14 @@ class QForm(forms.ModelForm):
                 Select(attrs={
                     'class':'block rounded border-slate-700 border px-2 w-full h-12'
                 }
-                # ,choices=([(university, university) for university in universitys])),
+                # ,choices=([(university, university) for university in universitys])
+                ),
             'department_select':
                 Select(attrs={
                     'class':'block rounded border-slate-700 border px-2 w-full h-12'
                 }
-                # ,choices=(list_departments)),
+                # ,choices=(list_departments)
+                ),
             'semester':
                 Select(attrs={
                     'class':'block rounded border-slate-700 border px-2 w-full h-12'
