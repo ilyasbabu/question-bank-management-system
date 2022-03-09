@@ -57,8 +57,14 @@ def search(request):
     qustions=None
     if 'q' in request.GET:
         query=request.GET.get('q')
-        qustions=questionanswer.objects.all().filter(Q(ques__icontains=query)|Q(answer__icontains=query)|Q(subject__subject__icontains=query))
-    return render(request, 'index.html',{'query':query,'qu':qustions,'un':univ,'de':dep,'su':sub})
+        # qustions=questionanswer.objects.all().filter(Q(ques__icontains=query)|Q(answer__icontains=query)|Q(subject__subject__icontains=query))
+    return render(request, 'index.html',{
+        'query':query,
+        'qu':qustions,
+        'un':univ,
+        'de':dep,
+        'su':sub
+        })
 #remove on production
 def temp(request):
     return render(request, 'tempo.html')
@@ -86,8 +92,13 @@ def category(request):
         dept=request.GET.get('department')
         subj=request.GET.get('subject')
         sem=request.GET.get('semester')
-        ques=questionanswer.objects.all().filter(Q(university_select_id=uni)&Q(department_id=dept)&Q(subject_id=subj)&Q(semester=sem))
-    return render(request,'index.html',{'qu':ques,'un':univ,'de':dep,'su':sub})
+        # ques=questionanswer.objects.all().filter(Q(university_select_id=uni)&Q(department_id=dept)&Q(subject_id=subj)&Q(semester=sem))
+    return render(request,'index.html',{
+        # 'qu':ques,
+        'un':univ,
+        'de':dep,
+        'su':sub
+        })
 def sort(request):
     univ=university.objects.all()
     dep=department.objects.all()
