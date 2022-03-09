@@ -26,14 +26,18 @@ Question bank
                 <select name="university" id="university" required
                     class="px-4 form-select mySelect block outline-none cursor-pointer border-0 rounded-t-md font-semibold text-sm bg-gray-100 w-full h-12">
                     <option class="text-xl" value="" selected="selected">University</option>
-                    
+                    {% for i in un %}
+                    <option class="text-xl" value="{{i.id}}">{{i.university_name}}</option>
+                    {% endfor %}
                 </select>
             </div>
             <div class="hover:bg-slate-200 rounded-t-md">
                 <select name="department" id="department" required
                     class="px-4 form-select mySelect block outline-none cursor-pointer border-0 font-semibold text-sm bg-gray-100 w-full h-12">
                     <option class="text-xl" value="" selected="selected">Department</option>
-                    
+                    {% for i in de %}
+                    <option class="text-xl" value="{{i.id}}">{{i.name}}</option>
+                    {% endfor %}
                 </select>
             </div>
             <div class="hover:bg-slate-200 rounded-t-md">
@@ -52,7 +56,9 @@ Question bank
                 <select name="subject" id="subject" required
                     class="px-4 form-select mySelect block outline-none cursor-pointer border-0 font-semibold text-sm bg-gray-100 w-full h-12">
                     <option class="text-xl" value="" selected="selected">Subject</option>
-                    
+                    {% for i in su %}
+                    <option class="text-xl" value="{{i.id}}">{{i.subject}}</option>
+                    {% endfor %}
                 </select>
             </div>
             <div class="flex gap-1 md:justify-end ">
@@ -66,7 +72,10 @@ Question bank
     <!-- end of primary dropdowns -->
     <div class="md:flex md:justify-between">
         <div class="mb-5">
-            
+            <div class="py-2">{% for i in qu %}
+                <h4>{% if forloop.last %}{{ forloop.counter}} results{% endif %} </h4>
+                {% endfor %}
+            </div>
             <div class=" rounded-md flex">
                 <p class="py-2 pl-1 font-medium">Sort by</p>
                 <form action="/sort/" method="get">
@@ -107,7 +116,18 @@ Question bank
     </div>
     <!-- sort ends -->
     <!-- question answers -->
-    
+    {% for i in qu %}
+    <div class="w-full bg-slate-200 px-9 py-4 my-5 md:hover:bg-slate-300 transition ease-in-out duration-500"
+        title="Click on the question to view the answer">
+        <details class="list-none cursor-pointer ">
+            <summary class="list-none mb-2 ">
+                <span class="font-medium">{{forloop.counter}}.</span>{{i.ques}}. <span class="font-medium">({{i.year}})</span>
+            </summary>
+            <p><span class="font-medium">A.</span> {{i.answer}}.</p>
+            <div class="flex items-end justify-end object-right"><a href="/detail/{{i.id}}" class="text-right text-blue-700 hover:font-semibold hover:text-blue-500" title="click to see more details about this question" >More Details</a></div>
+        </details>
+    </div>
+    {% endfor %}
     <!-- end of question answers -->
     <div class="grid object-center items-center justify-center py-24 sm:py-40 ">
         <h4 class="text-4xl text-slate-600">Not found what you are looking for?<br><span class="text-xl"><a href="/" class="text-blue-900 font-semibold underline"> Clear all filters</a> and try searching properly</span></h4>
