@@ -19,14 +19,14 @@ class QForm(forms.ModelForm):
     #     else:
     #         ddeptid[department.university.university_name]=[department.id]
     #     list_deptid.append((department.id,department.id))
-    universitys = [str(university) for university in university.objects.all()]
-    universitysid=[str(university.id) for university in university.objects.all()]
+    # universitys = [str(university) for university in university.objects.all()]
+    # universitysid=[str(university.id) for university in university.objects.all()]
     department_select = forms.ChoiceField(widget=Select(attrs={'class':'block rounded border-slate-700 border px-2 w-full h-12','required':''}),choices=(list_departments))
     timesAsked=forms.CharField(required=False,widget=NumberInput(attrs={'class':'block rounded border-slate-700 border px-2 w-full h-12','placeholder':'no. of times the question has been asked'}))
     comment=forms.CharField(required=False,widget=TextInput(attrs={'class':'block rounded border-slate-700 border px-2 w-full h-12','placeholder':'Enter comments if any'}))
-    universitys = json.dumps(universitys)
-    departments = json.dumps(ddepartments)
-    deptid= json.dumps(ddeptid)
+    # universitys = json.dumps(universitys)
+    # departments = json.dumps(ddepartments)
+    # deptid= json.dumps(ddeptid)
     class Meta:
         model=questionanswer
         fields=[
