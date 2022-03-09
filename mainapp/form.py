@@ -8,17 +8,17 @@ class QForm(forms.ModelForm):
     ddeptid = {}
     list_departments = []
     list_deptid = []
-    for department in department.objects.all():
-        if department.university.university_name in ddepartments:
-            ddepartments[department.university.university_name].append(department.name)
-        else:
-            ddepartments[department.university.university_name]=[department.name]
-        list_departments.append((department.name,department.name))
-        if department.university.university_name in ddeptid:
-            ddeptid[department.university.university_name].append(department.id)
-        else:
-            ddeptid[department.university.university_name]=[department.id]
-        list_deptid.append((department.id,department.id))
+    # for department in department.objects.all():
+    #     if department.university.university_name in ddepartments:
+    #         ddepartments[department.university.university_name].append(department.name)
+    #     else:
+    #         ddepartments[department.university.university_name]=[department.name]
+    #     list_departments.append((department.name,department.name))
+    #     if department.university.university_name in ddeptid:
+    #         ddeptid[department.university.university_name].append(department.id)
+    #     else:
+    #         ddeptid[department.university.university_name]=[department.id]
+    #     list_deptid.append((department.id,department.id))
     universitys = [str(university) for university in university.objects.all()]
     universitysid=[str(university.id) for university in university.objects.all()]
     department_select = forms.ChoiceField(widget=Select(attrs={'class':'block rounded border-slate-700 border px-2 w-full h-12','required':''}),choices=(list_departments))
