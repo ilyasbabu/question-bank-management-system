@@ -26,7 +26,6 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('feedback/', views.feedback, name='feedback'),
     path('addquestion/', views.addquestion, name='addquestion'),
-    path('temp/', views.temp, name='temp'),
     path('qverify/',views.qverify,name='qverify'),
     path('search/',views.search,name='search'),
     path('detail/<int:id>',views.detail,name='detail'),

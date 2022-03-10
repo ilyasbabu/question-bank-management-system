@@ -12,7 +12,7 @@ admin.site.register(subject,SubjectAdmin)
 class quesAdmin(admin.ModelAdmin):
     list_display=['__str__','subject','username','show']
     list_editable=['show']
-    list_filter=['subject','username']
+    list_filter=['subject','username','show','department','semester','university_select']
     search_fields=['ques','answer','subject__subject']
 admin.site.register(questionanswer,quesAdmin)
 

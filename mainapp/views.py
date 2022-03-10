@@ -7,23 +7,38 @@ from django.db.models import Q
 
 # Create your views here.
 def home(request):
-    questions=questionanswer.objects.all()
+    questions=questionanswer.objects.all().filter(show=True)
     univ=university.objects.all()
     dept=department.objects.all()
     subj=subject.objects.all()
-    return render(request, 'index.html',{'qu':questions,'un':univ,'de':dept,'su':subj})
+    return render(request, 'index.html',{
+        'qu':questions,
+        'un':univ,
+        'de':dept,
+        'su':subj
+        })
+
 def index(request):
-    questions=questionanswer.objects.all()
+    questions=questionanswer.objects.all().filter(show=True)
     univ=university.objects.all()
     dept=department.objects.all()
     subj=subject.objects.all()
-    return render(request, 'index.html',{'qu':questions,'un':univ,'de':dept,'su':subj})
+    return render(request, 'index.html',{
+        'qu':questions,
+        'un':univ,
+        'de':dept,
+        'su':subj
+        })
+
 def about(request):
     return render(request, 'about.html')
+
 def feedback(request):
     return render(request, 'feedback.html')
+
 def qverify(request):
     return render(request,'q_verify_prompt.html')
+
 def addquestion(request):
     form=QForm(request.POST)
     if request.method=='POST':
@@ -43,12 +58,27 @@ def addquestion(request):
             important=True
         else:
             important=False
-        que=questionanswer(ques=ques,answer=answer,username=username,university_select_id=university,department_id=department_select,subject_id=subject,year=year,comment=comment,semester=semester,timesAsked=timesAsked,important=important)
+        que=questionanswer(
+            ques=ques,
+            answer=answer,
+            username=username,
+            university_select_id=university,
+            department_id=department_select,
+            subject_id=subject,
+            year=year,
+            comment=comment,
+            semester=semester,
+            timesAsked=timesAsked,
+            important=important
+            )
         que.save()
         return redirect('/qverify')
     else:
         form=QForm()
-    return render(request,'addQ.html',{'form':form})
+    return render(request,'addQ.html',{
+        'form':form
+        })
+
 def search(request):
     univ=university.objects.all()
     dep=department.objects.all()
@@ -57,7 +87,15 @@ def search(request):
     qustions=None
     if 'q' in request.GET:
         query=request.GET.get('q')
-        qustions=questionanswer.objects.all().filter(Q(ques__icontains=query)|Q(answer__icontains=query)|Q(subject__subject__icontains=query))
+        valid=True
+        qustions=questionanswer.objects.all().filter(
+            # Q(show__contains=valid)&
+            Q(ques__icontains=query,show=True)|
+            # Q(show__contains=valid)&
+            Q(answer__icontains=query,show=True)|
+            # Q(show__contains=valid)&
+            Q(subject__subject__icontains=query,show=True)
+            )
     return render(request, 'index.html',{
         'query':query,
         'qu':qustions,
@@ -66,14 +104,15 @@ def search(request):
         'su':sub
         })
 #remove on production
-def temp(request):
-    return render(request, 'tempo.html')
+
 def detail(request,id):
     question=questionanswer.objects.get(id=id)
     return render(request,'details.html',{'qu':question})
+
 def qfeedback(request,id):
     question=questionanswer.objects.get(id=id)
     return render(request,'feedback.html',{'qu':question})
+
 def feedget(request):
     if request.method=='POST':
         name=request.POST.get('name')
@@ -83,6 +122,7 @@ def feedget(request):
         feed.save()
         return redirect('/')
     return render(request,'feedback.html')
+
 def category(request):
     univ=university.objects.all()
     dep=department.objects.all()
@@ -92,13 +132,45 @@ def category(request):
         dept=request.GET.get('department')
         subj=request.GET.get('subject')
         sem=request.GET.get('semester')
-        ques=questionanswer.objects.all().filter(Q(university_select_id=uni)&Q(department_id=dept)&Q(subject_id=subj)&Q(semester=sem))
+        if uni!='' and dept!='' and subj!='' and sem!='':
+            ques=questionanswer.objects.all().filter(Q(university_select_id=uni,show=True)&Q(department_id=dept,show=True)&Q(subject_id=subj,show=True)&Q(semester=sem,show=True))
+        elif uni!='' and dept!='' and subj!='':
+            ques=questionanswer.objects.all().filter(Q(university_select_id=uni,show=True)&Q(department_id=dept,show=True)&Q(subject_id=subj,show=True))
+        elif uni!='' and dept!='' and sem!='':
+            ques=questionanswer.objects.all().filter(Q(university_select_id=uni,show=True)&Q(department_id=dept,show=True)&Q(semester=sem,show=True))
+        elif uni!='' and subj!='' and sem!='':
+            ques=questionanswer.objects.all().filter(Q(university_select_id=uni,show=True)&Q(subject_id=subj,show=True)&Q(semester=sem,show=True))
+        elif dept!='' and subj!='' and sem!='':
+            ques=questionanswer.objects.all().filter(Q(department_id=dept,show=True)&Q(subject_id=subj,show=True)&Q(semester=sem,show=True))
+        elif uni!='' and dept!='':
+            ques=questionanswer.objects.all().filter(Q(university_select_id=uni,show=True)&Q(department_id=dept,show=True))
+        elif uni!='' and sem!='':
+            ques=questionanswer.objects.all().filter(Q(university_select_id=uni,show=True)&Q(semester=sem,show=True))
+        elif uni!='' and subj!='':
+            ques=questionanswer.objects.all().filter(Q(university_select_id=uni,show=True)&Q(subject_id=subj,show=True))
+        elif subj!='' and sem!='':
+            ques=questionanswer.objects.all().filter(Q(subject_id=subj,show=True)&Q(semester=sem,show=True))
+        elif uni!='':
+            ques=questionanswer.objects.all().filter(Q(university_select_id=uni,show=True))
+        elif dept!='' and sem!='':
+            ques=questionanswer.objects.all().filter(Q(department_id=dept,show=True)&Q(semester=sem,show=True))
+        elif dept!='' and subj!='':
+            ques=questionanswer.objects.all().filter(Q(department_id=dept,show=True)&Q(subject_id=subj,show=True))
+        elif dept!='':
+            ques=questionanswer.objects.all().filter(Q(department_id=dept,show=True))
+        elif sem!='':
+            ques=questionanswer.objects.all().filter(Q(semester=sem,show=True))
+        elif subj!='':
+            ques=questionanswer.objects.all().filter(Q(subject_id=subj,show=True))
+        elif uni=='' and dept=='' and sem=='' and subj=='':
+            ques=questionanswer.objects.all().filter(show=True)
     return render(request,'index.html',{
         'qu':ques,
         'un':univ,
         'de':dep,
         'su':sub
         })
+
 def sort(request):
     univ=university.objects.all()
     dep=department.objects.all()
