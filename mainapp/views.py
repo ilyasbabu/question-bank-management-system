@@ -177,11 +177,11 @@ def sort(request):
     sub=subject.objects.all()
     st=request.GET.get('sort')
     if st=='recent':
-        ques=questionanswer.objects.all().order_by('-year')
+        ques=questionanswer.objects.all().filter(show=True).order_by('-year')
     elif st=='asked':
-        ques=questionanswer.objects.all().order_by('-timesAsked')
+        ques=questionanswer.objects.all().filter(show=True).order_by('-timesAsked')
     elif st=='important':
-        ques=questionanswer.objects.all().order_by('-important','-timesAsked')
+        ques=questionanswer.objects.all().filter(show=True).order_by('-important','-timesAsked')
     return render(request,'index.html',{'qu':ques,'un':univ,'de':dep,'su':sub})
 
 
