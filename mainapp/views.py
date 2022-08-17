@@ -1,6 +1,6 @@
+from http.client import HTTPResponse
 from django.shortcuts import redirect, render
 from .models import *
-from .form import QForm
 from django.db.models import Q
 
 
@@ -18,17 +18,6 @@ def home(request):
         'su':subj
         })
 
-def index(request):
-    questions=questionanswer.objects.all().filter(show=True)
-    univ=university.objects.all()
-    dept=department.objects.all()
-    subj=subject.objects.all()
-    return render(request, 'index.html',{
-        'qu':questions,
-        'un':univ,
-        'de':dept,
-        'su':subj
-        })
 
 def about(request):
     return render(request, 'about.html')
@@ -39,7 +28,10 @@ def feedback(request):
 def qverify(request):
     return render(request,'q_verify_prompt.html')
 
+
+
 def addquestion(request):
+    from .form import QForm
     form=QForm(request.POST)
     if request.method=='POST':
         usr=request.user.username

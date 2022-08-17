@@ -12,7 +12,9 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 import os
 from pathlib import Path
-import django_heroku
+from dotenv import load_dotenv
+load_dotenv()
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -90,11 +92,11 @@ WSGI_APPLICATION = 'qbankproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'questionbank',
-        'USER' : 'postgres',
-        'PASSWORD': '1234',
-        'HOST':'localhost'
+        'ENGINE': str(os.getenv("DB_ENGINE")) ,
+        'NAME': str(os.getenv("DB_NAME")),
+        'USER' : str(os.getenv("DB_USER")),
+        'PASSWORD': str(os.getenv("DB_PASSWORD")),
+        'HOST':str(os.getenv("DB_HOST"))
     }
 }
 
@@ -153,5 +155,3 @@ EMAIL_HOST_USER = str(os.getenv("your_mail"))
 EMAIL_HOST_PASSWORD = str(os.getenv("your_app_password"))
 EMAIL_USE_TLS = True
 
-
-django_heroku.settings(locals())

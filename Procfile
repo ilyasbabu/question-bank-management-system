@@ -1,1 +1,0 @@
-web: gunicorn qbankproject.wsgi --log-file -

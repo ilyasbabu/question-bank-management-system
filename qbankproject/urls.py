@@ -21,7 +21,6 @@ from mainapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/', include('user.urls')),
-    path('', views.index, name='index'),
     path('',views.home,name='home'),
     path('about/', views.about, name='about'),
     path('feedback/', views.feedback, name='feedback'),
@@ -33,7 +32,4 @@ urlpatterns = [
     path('feedget/',views.feedget,name='feedget'),
     path('category/',views.category,name='category'),
     path('sort/',views.sort,name='sort'),
-    # path('login/',views.login,name='login'),
-    # path('logout/',views.logout,name='logout'),
-    # path('create_acc/',views.create_acc,name='create_acc')
 ]
