@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = str(os.getenv("SECRET_KEY"))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool(os.getenv("DEBUG"))
 
 ALLOWED_HOSTS = []
 
@@ -55,7 +55,7 @@ INTERNAL_IPS = [
 
 TAILWIND_APP_NAME = 'theme'
 
-NPM_BIN_PATH = "/usr/bin/npm"
+NPM_BIN_PATH = str(os.getenv("NPM_PATH"))
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -151,9 +151,9 @@ LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'home'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = str(os.getenv("your_mail"))
-EMAIL_HOST_PASSWORD = str(os.getenv("your_app_password"))
+EMAIL_HOST = str(os.getenv("EMAIL_HOST"))
+EMAIL_PORT = str(os.getenv("EMAIL_PORT"))
+EMAIL_HOST_USER = str(os.getenv("EMAIL_USER"))
+EMAIL_HOST_PASSWORD = str(os.getenv("EMAIL_PASSWORD"))
 EMAIL_USE_TLS = True
 
