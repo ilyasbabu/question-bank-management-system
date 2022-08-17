@@ -32,4 +32,5 @@ urlpatterns = [
     path('feedget/',views.feedget,name='feedget'),
     path('category/',views.category,name='category'),
     path('sort/',views.sort,name='sort'),
+    path("__reload__/", include("django_browser_reload.urls")),
 ]

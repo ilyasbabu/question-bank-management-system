@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'theme',
     'mainapp',
     'crispy_forms',
-    'user'
+    'user',
+    'django_browser_reload'
 ]
 
 INTERNAL_IPS = [
@@ -54,7 +55,7 @@ INTERNAL_IPS = [
 
 TAILWIND_APP_NAME = 'theme'
 
-NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
+NPM_BIN_PATH = "/usr/bin/npm"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -63,6 +64,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
