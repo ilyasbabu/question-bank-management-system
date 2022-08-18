@@ -118,6 +118,7 @@ Question bank
     </div>
     <!-- sort ends -->
     <!-- question answers -->
+    {% if qu %}
     <form method="post">
         {% csrf_token %}
         {% for i in qu %}
@@ -145,10 +146,12 @@ Question bank
         </div>
     </form>
     <!-- end of question answers -->
+    {% else %}
     <div class="grid object-center items-center justify-center py-24 sm:py-40 ">
         <h4 class="text-4xl text-slate-600">Not found what you are looking for?<br><span class="text-xl"><a href="/"
                     class="text-blue-900 font-semibold underline"> Clear all filters</a> and try searching
                 properly</span></h4>
     </div>
+    {% endif %}
 </main>
 {% endblock %}
