@@ -23,8 +23,7 @@ Question bank
     <div class="rounded shadow-xl mb-10 mt-5 bg-gray-100">
         <form action="/category/" method="get">
             <div class="hover:bg-slate-200 rounded-t-md">
-                <select name="university" id="university" 
-                
+                <select name="university" id="university"
                     class="px-4 form-select mySelect block outline-none cursor-pointer border-0 rounded-t-md font-semibold text-sm bg-gray-100 w-full h-12">
                     <option class="text-xl" value="" selected="selected">University</option>
                     {% for i in un %}
@@ -33,8 +32,7 @@ Question bank
                 </select>
             </div>
             <div class="hover:bg-slate-200 rounded-t-md">
-                <select name="department" id="department" 
-                
+                <select name="department" id="department"
                     class="px-4 form-select mySelect block outline-none cursor-pointer border-0 font-semibold text-sm bg-gray-100 w-full h-12">
                     <option class="text-xl" value="" selected="selected">Department</option>
                     {% for i in de %}
@@ -44,8 +42,7 @@ Question bank
             </div>
             <div class="hover:bg-slate-200 rounded-t-md">
                 <select name="semester" id="semester"
-
-                class="px-4 form-select mySelect block outline-none cursor-pointer border-0 font-semibold text-sm bg-gray-100 w-full h-12">
+                    class="px-4 form-select mySelect block outline-none cursor-pointer border-0 font-semibold text-sm bg-gray-100 w-full h-12">
                     <option class="text-xl" value="" selected="selected">Semester</option>
                     <option class="text-xl" value="s1">1st semester</option>
                     <option class="text-xl" value="s2">2nd semester</option>
@@ -56,8 +53,7 @@ Question bank
                 </select>
             </div>
             <div class="hover:bg-slate-200 rounded-t-md">
-                <select name="subject" id="subject" 
-                
+                <select name="subject" id="subject"
                     class="px-4 form-select mySelect block outline-none cursor-pointer border-0 font-semibold text-sm bg-gray-100 w-full h-12">
                     <option class="text-xl" value="" selected="selected">Subject</option>
                     {% for i in su %}
@@ -69,7 +65,10 @@ Question bank
                 <input type="submit" value="Submit" id="submit"
                     class="text-white lg:w-1/6 w-1/2 h-10 bg-slate-500 hover:bg-slate-700 cursor-pointer rounded-bl-md md:rounded-none transition duration-150 ease-in-out">
                 <button type="button" formaction="/"
-                    class="text-white w-1/2 lg:w-1/6 h-10 bg-slate-500 hover:bg-slate-700 cursor-pointer rounded-br-md transition duration-150 ease-in-out"><a href="/" class="w-auto h-full"><div class="h-full flex justify-center items-center">Clear all filters</div></a></button>
+                    class="text-white w-1/2 lg:w-1/6 h-10 bg-slate-500 hover:bg-slate-700 cursor-pointer rounded-br-md transition duration-150 ease-in-out"><a
+                        href="/" class="w-auto h-full">
+                        <div class="h-full flex justify-center items-center">Clear all filters</div>
+                    </a></button>
             </div>
         </form>
     </div>
@@ -98,8 +97,7 @@ Question bank
                 <div>
                     <input type="search"
                         class="form-control relative flex-auto min-w-0 block w-56 md:w-auto px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded md:rounded-none md:rounded-l-md transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                        placeholder="Search with keywords"
-                        name="q">
+                        placeholder="Search with keywords" name="q">
                 </div>
                 <div>
                     <button type="submit"
@@ -120,21 +118,37 @@ Question bank
     </div>
     <!-- sort ends -->
     <!-- question answers -->
-    {% for i in qu %}
-    <div class="w-full bg-slate-200 px-9 py-4 my-5 md:hover:bg-slate-300 transition ease-in-out duration-500"
-        title="Click on the question to view the answer">
-        <details class="list-none cursor-pointer ">
-            <summary class="list-none mb-2 ">
-                <span class="font-medium">{{forloop.counter}}.</span>{{i.ques}}. <span class="font-medium">({{i.year}})</span>
-            </summary>
-            <p><span class="font-medium">A.</span> {{i.answer}}.</p>
-            <div class="flex items-end justify-end object-right"><a href="/detail/{{i.id}}" class="text-right text-blue-700 hover:font-semibold hover:text-blue-500" title="click to see more details about this question" >More Details</a></div>
-        </details>
-    </div>
-    {% endfor %}
+    <form method="post">
+        {% csrf_token %}
+        {% for i in qu %}
+        <div class="w-full bg-slate-200 px-9 py-4 my-5 md:hover:bg-slate-300 transition ease-in-out duration-500"
+            title="Click on the question to view the answer">
+            <details class="list-none cursor-pointer ">
+                <summary class="list-none mb-2 grid">
+                    <div>
+                        <span><input type="checkbox" name="{{i.id}}" id="{{i.id}}">&nbsp;&nbsp;</span>
+                        <span class="font-medium">{{forloop.counter}}.</span>{{i.ques}}. <span
+                            class="font-medium ">({{i.year}})</span>
+                    </div>
+                </summary>
+                <p><span class="font-medium">A.</span> {{i.answer}}.</p>
+                <div class="flex items-end justify-end object-right"><a href="/detail/{{i.id}}"
+                        class="text-right text-blue-700 hover:font-semibold hover:text-blue-500"
+                        title="click to see more details about this question">More Details</a></div>
+            </details>
+        </div>
+        {% endfor %}
+        <div class="flex justify-end">
+            <input
+                class="rounded bg-slate-600 hover:bg-slate-500 hover:rounded-lg transition ease-in-out duration-500 w-full sm:w-min font-semibold text-white p-3 px-12"
+                type="button" value="Print" title="Print or save as PDF">
+        </div>
+    </form>
     <!-- end of question answers -->
     <div class="grid object-center items-center justify-center py-24 sm:py-40 ">
-        <h4 class="text-4xl text-slate-600">Not found what you are looking for?<br><span class="text-xl"><a href="/" class="text-blue-900 font-semibold underline"> Clear all filters</a> and try searching properly</span></h4>
+        <h4 class="text-4xl text-slate-600">Not found what you are looking for?<br><span class="text-xl"><a href="/"
+                    class="text-blue-900 font-semibold underline"> Clear all filters</a> and try searching
+                properly</span></h4>
     </div>
 </main>
 {% endblock %}
