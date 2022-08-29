@@ -119,15 +119,14 @@ Question bank
     <!-- sort ends -->
     <!-- question answers -->
     {% if qu %}
-    <form method="post">
-        {% csrf_token %}
+    <form method="post" action="/print/">
         {% for i in qu %}
         <div class="w-full bg-slate-200 px-9 py-4 my-5 md:hover:bg-slate-300 transition ease-in-out duration-500"
             title="Click on the question to view the answer">
             <details class="list-none cursor-pointer ">
                 <summary class="list-none mb-2 grid">
                     <div>
-                        <span><input type="checkbox" name="{{i.id}}" id="{{i.id}}">&nbsp;&nbsp;</span>
+                        <span><input type="checkbox" name="printQ" value="{{i.id}}">&nbsp;&nbsp;</span>
                         <span class="font-medium">{{forloop.counter}}.</span>{{i.ques}}. <span
                             class="font-medium ">({{i.year}})</span>
                     </div>
@@ -142,7 +141,7 @@ Question bank
         <div class="flex justify-end">
             <input
                 class="rounded bg-slate-600 hover:bg-slate-500 hover:rounded-lg transition ease-in-out duration-500 w-full sm:w-min font-semibold text-white p-3 px-12"
-                type="button" value="Print" title="Print or save as PDF">
+                type="submit" value="Print" title="Print or save as PDF">
         </div>
     </form>
     <!-- end of question answers -->
