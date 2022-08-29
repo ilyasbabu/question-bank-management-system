@@ -1,7 +1,8 @@
-from http.client import HTTPResponse
+from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from .models import *
 from django.db.models import Q
+from django.views.decorators.csrf import csrf_exempt
 
 
 
@@ -176,54 +177,17 @@ def sort(request):
         ques=questionanswer.objects.all().filter(show=True).order_by('-important','-timesAsked')
     return render(request,'index.html',{'qu':ques,'un':univ,'de':dep,'su':sub})
 
+@csrf_exempt
+def print_f(request):
+    ids = request.POST.getlist('printQ')
+    res = {}
+    res['heading'] = "QuestionBank"
+    res['data'] = {}
+    for counter,i in enumerate(ids,1):
+        qa = questionanswer.objects.get(id=i)
+        a = res['data'][counter] = f"""
+                                    <p>{qa.ques}</p><br>
+                                    <p>{qa.answer}</p><br>
 
-# def create_acc(request):
-#     if request.method=='POST':
-#         fname=request.POST['fname']
-#         laname=request.POST['laname']
-#         username=request.POST['username']
-#         email=request.POST['email']
-#         designation=request.POST['designation']
-#         university=request.POST['university']
-#         college=request.POST['college']
-#         phone=request.POST['phone']
-#         password=request.POST['password']
-#         password1=request.POST['password1']
-#         if password==password1:
-#             if User.objects.filter(username=username).exists():
-#                 messages.info(request,'Username Taken')
-#                 return redirect('/create_acc')
-#             elif User.objects.filter(email=email).exists():
-#                 messages.info(request,'email already registered')
-#                 return redirect('/create_acc')
-#             else:
-#                 user=User.objects.create_user(username=username,first_name=fname,last_name=laname,email=email,password=password)
-#                 user.save()
-#                 prof=Profile(username=username,designation=designation,university=university,college=college,phone=phone)
-#                 prof.save()
-#                 messages.info(request,'User Created')
-#         else:
-#             print('error in password')
-#             messages.info(request,'Password not matching')
-#             return redirect('/create_acc')
-#     else:
-#         return render(request,'signup.html')
-#     return render(request,'signup.html')
-
-# def login(request):
-#     if request.method=='POST':
-#         username=request.POST['username']
-#         password=request.POST['password']
-#         user=auth.authenticate(username=username,password=password)
-#         if user is not None:
-#             auth.login(request,user)
-#             return redirect('/')
-#         else:
-#             messages.info(request,'Invalid username or password!')
-#             return redirect('/login')
-#     else:
-#         return render(request,'login.html')
-
-# def logout(request):
-#     auth.logout(request)
-#     return redirect('/')
+                                    """
+    return HttpResponse(res['data'][1])
