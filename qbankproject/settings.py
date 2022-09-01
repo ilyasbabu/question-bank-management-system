@@ -46,7 +46,9 @@ INSTALLED_APPS = [
     'mainapp',
     'crispy_forms',
     'user',
-    'django_browser_reload'
+    'django_browser_reload',
+    'rest_framework',
+
 ]
 
 INTERNAL_IPS = [

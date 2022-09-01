@@ -185,9 +185,8 @@ def print_f(request):
     res['data'] = {}
     for counter,i in enumerate(ids,1):
         qa = questionanswer.objects.get(id=i)
-        a = res['data'][counter] = f"""
-                                    <p>{qa.ques}</p><br>
-                                    <p>{qa.answer}</p><br>
-
-                                    """
+        res['data'][counter] = f"""
+                                <p>{qa.ques}</p><br>
+                                <p>{qa.answer}</p><br>
+                                """
     return HttpResponse(res['data'][1])
