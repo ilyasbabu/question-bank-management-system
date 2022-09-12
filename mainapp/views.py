@@ -1,8 +1,13 @@
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
+from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+from reportlab.lib.units import inch
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from .models import *
 from django.db.models import Q
 from django.views.decorators.csrf import csrf_exempt
+from django.core.files.storage import FileSystemStorage
+
 
 
 
@@ -180,13 +185,37 @@ def sort(request):
 @csrf_exempt
 def print_f(request):
     ids = request.POST.getlist('printQ')
-    res = {}
-    res['heading'] = "QuestionBank"
-    res['data'] = {}
+
+    doc = SimpleDocTemplate("/tmp/questionBank_generated.pdf")
+    styles = getSampleStyleSheet()
+    Story = [Spacer(1,0.2*inch)]
+    style = styles["Normal"]
+
+    heading_style = ParagraphStyle(
+        'style',
+        fontSize=20
+    )
+    heading = "Question Bank Generated"
+    p = Paragraph(heading,heading_style)
+    Story.append(p)
+    Story.append(Spacer(1,0.4*inch))
+
+
     for counter,i in enumerate(ids,1):
         qa = questionanswer.objects.get(id=i)
-        res['data'][counter] = f"""
-                                <p>{qa.ques}</p><br>
-                                <p>{qa.answer}</p><br>
-                                """
-    return HttpResponse(res['data'][1])
+        question = f"{counter}. {qa.ques}"
+        p = Paragraph(question, style)
+        Story.append(p)
+
+        answer_ = f"Ans. {qa.answer}"
+        p = Paragraph(answer_, style)
+        Story.append(p)
+
+        Story.append(Spacer(1,0.2*inch))
+    doc.build(Story)
+
+    fs = FileSystemStorage("/tmp")
+    with fs.open("questionBank_generated.pdf") as pdf:
+        response = HttpResponse(pdf, content_type='application/pdf')
+        response['Content-Disposition'] = 'attachment; filename="questionBank_generated.pdf"'
+        return response
