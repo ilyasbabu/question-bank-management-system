@@ -105,13 +105,13 @@ $ python manage.py tailwind start
 
 ## Future Improvements
 
-- Need to make categorisation, sorting and searching robust without page reload.
-- Need to implement a feature of selecting questions and printing them.
-- Need to improve the UI and implement Dark Theme.
-- Need to implement a new interface for admins and moderators.
-- Need to implement rich text formatting for question answers.
-- Need to implement OAuth.
-- Need to Optimize the build.
+- [ ] Need to make categorisation, sorting and searching robust without page reload.
+- [x] Need to implement a feature of selecting questions and printing them.
+- [ ] Need to improve the UI and implement Dark Theme.
+- [ ] Need to implement a new interface for admins and moderators.
+- [ ] Need to implement rich text formatting for question answers.
+- [ ] Need to implement OAuth.
+- [ ] Need to Optimize the build.
 
 ## License
 
