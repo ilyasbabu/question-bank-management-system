@@ -4,7 +4,9 @@ Question Bank Management System can be used to access the complete questions tha
 
 This project is build using **Python Django** Framework.
 
-> The deployed working link of the project is [here](https://questionbank.kripaelectrolysis.com/)
+> The demo layout of the project is [here](https://ilyasbabu.github.io/question-bank-management-system/layouts/)
+
+> The deployed working link of the project is [here](https://questionbank.kripaelectrolysis.com/) (New Question Bank v2)
 
 ## Features
 
